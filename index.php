@@ -1,68 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Best IELTS Training in Ernakulam | IELTS Coaching Kochi</title>
-  <meta name="description" content="Training every module with adequate mock tests in listening, speaking, reading and writing, Casper academy provides the Best IELTS training in Ernakulam.">
-  <link rel="icon" href="favicon.ico" sizes="any">
-  <link rel="icon" type="image/png" sizes="32x32" href="assets/img/favicon-32.png">
-  <link rel="icon" type="image/png" sizes="192x192" href="assets/img/favicon-192.png">
-  <link rel="apple-touch-icon" href="assets/img/apple-touch-icon.png">
-  <link rel="preload" as="image" href="assets/img/photos/hero.jpg">
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="assets/css/style.css">
-</head>
-<body>
-
-<a class="skip" href="#main">Skip to content</a>
-
-<!-- ============ Header ============ -->
-<header class="header" id="header">
-  <div class="wrap header__inner">
-    <a class="brand" href="index.html" aria-label="Casper Academy of Excellence home">
-      <img class="brand__light" src="assets/img/logo-white.png" alt="Casper Academy of Excellence" width="278" height="103">
-      <img class="brand__dark" src="assets/img/logo.png" alt="" width="278" height="103">
-    </a>
-
-    <nav class="nav" id="nav" aria-label="Main">
-      <ul class="nav__list">
-        <li><a href="index.html" aria-current="page">Home</a></li>
-        <li><a href="about.php">About</a></li>
-        <li class="nav__has-sub">
-          <button class="nav__sub-toggle" aria-expanded="false" aria-controls="sub-courses">Courses
-            <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <ul class="nav__sub" id="sub-courses">
-            <li><a href="ielts.php">IELTS</a></li>
-            <li><a href="pte.php">PTE</a></li>
-            <li><a href="oet.php">OET</a></li>
-            <li><a href="communicative-english.php">Communicative English</a></li>
-            <li><a href="german-language.php">German Language</a></li>
-          </ul>
-        </li>
-        <li><a href="services.php">Services</a></li>
-        <li><a href="gallery.php">Gallery</a></li>
-        <li><a href="essay.php">Essay</a></li>
-        <li><a href="frequently.php">FAQ</a></li>
-        <li><a href="blog/">Blog</a></li>
-        <li class="nav__cta-item"><a class="btn btn--red btn--sm" href="contact-us.php">Contact</a></li>
-      </ul>
-    </nav>
-
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-      <span></span><span></span>
-    </button>
-  </div>
-</header>
+<?php
+$page = [
+  'title' => 'Best IELTS Training in Ernakulam | IELTS Coaching Kochi',
+  'description' => 'Training every module with adequate mock tests in listening, speaking, reading and writing, Casper academy provides the Best IELTS training in Ernakulam.',
+  'path' => '/',
+  'nav' => 'home',
+  'preload' => '/assets/img/photos/hero.jpg',
+];
+include __DIR__ . '/partials/header.php';
+?>
 
 <main id="main">
 
   <!-- ============ Hero ============ -->
   <section class="hero">
-    <img class="hero__photo" src="assets/img/photos/hero.jpg" alt="Students in a classroom, one holding a folder and smiling" width="2000" height="1333">
+    <img class="hero__photo" src="/assets/img/photos/hero.jpg" alt="Students in a classroom, one holding a folder and smiling" width="2000" height="1333">
     <div class="wrap hero__content">
       <p class="hero__kicker">Best IELTS Institute in Kochi</p>
       <h1 class="hero__title">Your Mission - Better lifestyle</h1>
@@ -106,36 +57,36 @@
 
       <ul class="course-grid">
         <li class="course course--feature">
-          <a href="ielts.php">
-            <img src="assets/img/photos/course-ielts.jpg" alt="" loading="lazy" width="900" height="1100">
+          <a href="/ielts">
+            <img src="/assets/img/photos/course-ielts.jpg" alt="" loading="lazy" width="900" height="1100">
             <span class="course__name">IELTS</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </li>
         <li class="course">
-          <a href="pte.php">
-            <img src="assets/img/photos/course-pte.jpg" alt="" loading="lazy" width="900" height="700">
+          <a href="/pte">
+            <img src="/assets/img/photos/course-pte.jpg" alt="" loading="lazy" width="900" height="700">
             <span class="course__name">PTE</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </li>
         <li class="course">
-          <a href="oet.php">
-            <img src="assets/img/photos/course-oet.jpg" alt="" loading="lazy" width="900" height="700">
+          <a href="/oet">
+            <img src="/assets/img/photos/course-oet.jpg" alt="" loading="lazy" width="900" height="700">
             <span class="course__name">OET</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </li>
         <li class="course">
-          <a href="communicative-english.php">
-            <img src="assets/img/photos/course-english.jpg" alt="" loading="lazy" width="900" height="700">
+          <a href="/communicative-english">
+            <img src="/assets/img/photos/course-english.jpg" alt="" loading="lazy" width="900" height="700">
             <span class="course__name">Communicative English</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </li>
         <li class="course">
-          <a href="german-language.php">
-            <img src="assets/img/photos/course-german.jpg" alt="" loading="lazy" width="900" height="700">
+          <a href="/german-language">
+            <img src="/assets/img/photos/course-german.jpg" alt="" loading="lazy" width="900" height="700">
             <span class="course__name">German Language</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -143,7 +94,7 @@
       </ul>
 
       <div class="center">
-        <a class="btn btn--outline" href="ielts.php">Read more details</a>
+        <a class="btn btn--outline" href="/ielts">Read more details</a>
       </div>
     </div>
   </section>
@@ -152,8 +103,8 @@
   <section class="about" id="about">
     <div class="wrap about__inner">
       <div class="about__photos">
-        <img class="about__photo about__photo--main" src="assets/img/photos/academy-2.jpg" alt="Students working through study material together at Casper Academy, Vyttila" loading="lazy" width="1200" height="900">
-        <img class="about__photo about__photo--small" src="assets/img/photos/academy-1.jpg" alt="A class in session at Casper Academy" loading="lazy" width="1200" height="900">
+        <img class="about__photo about__photo--main" src="/assets/img/photos/academy-2.jpg" alt="Students working through study material together at Casper Academy, Vyttila" loading="lazy" width="1200" height="900">
+        <img class="about__photo about__photo--small" src="/assets/img/photos/academy-1.jpg" alt="A class in session at Casper Academy" loading="lazy" width="1200" height="900">
       </div>
       <div class="about__text">
         <h2 class="about__title">Casper Academy of Excellence<br>Best IELTS Coaching in Kochi</h2>
@@ -205,79 +156,29 @@
     <div class="wrap">
       <div class="join__card">
         <div class="join__media">
-          <img src="assets/img/photos/join.jpg" alt="Students gathered around a laptop, smiling" loading="lazy" width="1400" height="1050">
+          <img src="/assets/img/photos/join.jpg" alt="Students gathered around a laptop, smiling" loading="lazy" width="1400" height="1050">
         </div>
         <div class="join__text">
           <h2 class="h2 h2--light">Join the Best Institute for IELTS Preparation</h2>
           <p>Casper Academy of Excellence provides the most effective IELTS training available. Professional, result-oriented coaching can help you attain your targeted IELTS and OET scores. Here, you can find the most effective tactics and advice for improving your speaking, writing, reading, and listening abilities. As a result, it has become the leading centre in Kochi for IELTS coaching. Casper Academy also offers training in communicative English and German to assist students create careers in foreign countries.</p>
-          <a class="btn btn--white" href="contact-us.php">Join Now</a>
+          <a class="btn btn--white" href="/contact">Join Now</a>
         </div>
       </div>
 
       <div class="videos">
         <a class="video" href="https://www.youtube.com/watch?v=OZNkn7bPemI" target="_blank" rel="noopener" aria-label="Play IDP IELTS video (opens YouTube)">
-          <img src="assets/img/photos/video-1.jpg" alt="" loading="lazy" width="900" height="600">
+          <img src="/assets/img/photos/video-1.jpg" alt="" loading="lazy" width="900" height="600">
           <span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
           <span class="video__label">IDP IELTS</span>
         </a>
         <a class="video" href="https://www.youtube.com/watch?v=PBqUCD-K6Mw" target="_blank" rel="noopener" aria-label="Play IDP IELTS video (opens YouTube)">
-          <img src="assets/img/photos/video-2.jpg" alt="" loading="lazy" width="900" height="600">
+          <img src="/assets/img/photos/video-2.jpg" alt="" loading="lazy" width="900" height="600">
           <span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
           <span class="video__label">IDP IELTS</span>
         </a>
       </div>
     </div>
   </section>
-
 </main>
 
-<!-- ============ Footer ============ -->
-<footer class="footer" id="contact">
-  <div class="wrap">
-    <div class="footer__top">
-      <div class="footer__brand">
-        <img src="assets/img/logo-white.png" alt="Casper Academy of Excellence" width="200" height="74">
-        <p>Pioneers with over 25 years of experience in the industry enable us to develop the most efficient set of strategies made with purpose</p>
-        <ul class="social">
-          <li><a href="https://www.facebook.com/casperacademyofexcellencekochi/" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24"><path d="M14 8h3V4h-3c-2.8 0-4 1.8-4 4.5V11H7v4h3v9h4v-9h3l1-4h-4V8.6c0-.4.3-.6.6-.6Z" fill="currentColor"/></svg></a></li>
-          <li><a href="https://www.linkedin.com/company/casper-academy-of-excellence/" target="_blank" rel="noopener" aria-label="LinkedIn"><svg viewBox="0 0 24 24"><path d="M4.5 9h3.8v12H4.5zM6.4 3a2.2 2.2 0 1 1 0 4.4 2.2 2.2 0 0 1 0-4.4ZM10.6 9h3.6v1.7c.5-1 1.8-2 3.7-2 4 0 4.6 2.6 4.6 6V21h-3.8v-5.6c0-1.4 0-3.1-1.9-3.1s-2.2 1.5-2.2 3V21h-3.8z" fill="currentColor"/></svg></a></li>
-          <li><a href="https://www.instagram.com/casperacademy.in/" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="5" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor"/></svg></a></li>
-        </ul>
-      </div>
-
-      <div class="footer__col">
-        <h3>Address</h3>
-        <ul class="contact">
-          <li>1st Floor, Thevannathu Building, S.A. Road, Vyttila, Kochi</li>
-          <li><a href="tel:+914844863444">+91 48 44 863 444</a></li>
-          <li><a href="tel:+918136835444">+91 81 36 835 444</a></li>
-          <li><a href="mailto:info@casperacademy.in">info@casperacademy.in</a></li>
-        </ul>
-      </div>
-
-      <div class="footer__col">
-        <h3>Courses</h3>
-        <ul>
-          <li><a href="ielts.php">IELTS</a></li>
-          <li><a href="pte.php">PTE</a></li>
-          <li><a href="oet.php">OET</a></li>
-          <li><a href="communicative-english.php">Communicative English</a></li>
-          <li><a href="german-language.php">German Language</a></li>
-        </ul>
-      </div>
-    </div>
-
-    <div class="footer__bottom">
-      <p>© 2026 Casper Academy of Excellence</p>
-      <a class="totop" href="#header" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
-    </div>
-  </div>
-</footer>
-
-<a class="whatsapp" href="https://api.whatsapp.com/send?phone=918136835444&amp;text=Hi" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
-  <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6c-2 0-4-.5-5.6-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5 0-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.7.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5l-.2-.3Z"/></svg>
-</a>
-
-<script src="assets/js/main.js"></script>
-</body>
-</html>
+<?php include __DIR__ . '/partials/footer.php'; ?>

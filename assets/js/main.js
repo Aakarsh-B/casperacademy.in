@@ -4,8 +4,9 @@
   var burger = document.getElementById('burger');
 
   // Solid header once the page scrolls past the top
+  var alwaysSolid = header.classList.contains('is-fixed-solid');
   function onScroll() {
-    header.classList.toggle('is-solid', window.scrollY > 24);
+    header.classList.toggle('is-solid', alwaysSolid || window.scrollY > 24);
   }
   onScroll();
   window.addEventListener('scroll', onScroll, { passive: true });
@@ -63,6 +64,45 @@
         if (p < 1) requestAnimationFrame(tick);
       }
       requestAnimationFrame(tick);
+    });
+  }
+
+  // IELTS score calculator: average of four bands, rounded to the nearest half band
+  // (.25 rounds up to .5, .75 rounds up to the next whole band)
+  var calc = document.getElementById('calc');
+  if (calc) {
+    var result = document.getElementById('calc-result');
+    calc.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var inputs = calc.querySelectorAll('input');
+      var total = 0;
+      var bad = [];
+      inputs.forEach(function (input) {
+        var v = parseFloat(input.value);
+        var ok = input.value !== '' && v >= 0 && v <= 9 && (v * 2) % 1 === 0;
+        input.setAttribute('aria-invalid', String(!ok));
+        if (ok) total += v; else bad.push(input.name);
+      });
+      result.classList.toggle('is-error', bad.length > 0);
+      if (bad.length) {
+        result.textContent = 'Enter a band from 0 to 9 in steps of 0.5 for ' + bad.join(', ') + '.';
+        return;
+      }
+      var band = Math.floor((total / 4) * 4 + 0.0001) / 4;   // quarter steps
+      band = (band % 1 === 0.25 || band % 1 === 0.75) ? band + 0.25 : band;
+      result.innerHTML = 'Overall band <strong>' + band.toFixed(1).replace('.0', '') + '</strong>';
+    });
+  }
+
+  // Achievers carousel buttons
+  var track = document.getElementById('achievers');
+  if (track) {
+    document.querySelectorAll('[data-scroll]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var card = track.querySelector('.achiever');
+        var step = card ? card.getBoundingClientRect().width + 16 : 300;
+        track.scrollBy({ left: step * parseInt(btn.dataset.scroll, 10) * 2, behavior: reduce ? 'auto' : 'smooth' });
+      });
     });
   }
 })();

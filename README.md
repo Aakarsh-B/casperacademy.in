@@ -1,27 +1,35 @@
 # Casper Academy of Excellence website
 
-Plain HTML, CSS and JavaScript. No build step.
+Plain PHP pages sharing one header and footer. No build step, no database.
+WordPress stays separate in `/blog/`.
 
 ```
-index.html
-assets/css/style.css
-assets/js/main.js
-assets/img/logo.png        (original logo)
-assets/img/logo-white.png  (white version for dark backgrounds)
+index.php            homepage
+ielts.php            IELTS course page            -> /ielts
+404.php              page-not-found
+partials/header.php  <head>, SEO tags, site header (each page sets $page first)
+partials/footer.php  site footer, organisation schema, scripts
+assets/              css, js, images
+.htaccess            https + www, clean URLs, old .php links -> new, 404
+sitemap.xml, robots.txt
+router.php           local preview only
 ```
 
 ## Preview locally
-Open `index.html` in a browser.
+```
+php -S localhost:8000 router.php
+```
+Then open http://localhost:8000
+
+## Add a page
+Copy `ielts.php`, change the `$page` array (title, description, path, nav) and the content,
+add it to `sitemap.xml`. `/new-page` is served from `new-page.php` automatically.
 
 ## Deploy to Hostinger
-Upload the contents of this folder (index.html and the assets folder) into `public_html` using Hostinger's File Manager, or connect the GitHub repo under **Websites → Advanced → Git**.
+Upload everything except `router.php` and `README.md` to `public_html`
+(keep the existing `blog/` folder), or connect this repo under **Websites → Advanced → Git**.
 
 ## Photos
-- `assets/img/photos/academy-*.jpg`: Casper Academy's own classroom photos (from the current site).
-- All other photos are from Unsplash (free under the Unsplash License, no attribution required):
-  hero `photo-1571260899304-425eee4c7efc`, IELTS `1596495578065-6e0763fa1178`, PTE `1513258496099-48168024aec0`,
-  OET `1559839734-2b71ea197ec2`, English `1543269865-cbf427effbad`, German `1587330979470-3595ac045ab0`,
-  join `1531545514256-b1400bc00f31`, videos `1513635269975-59663e0ac1ad`, `1506973035872-a4ec16b8e8d9`.
-
-## Links
-Internal links use the current site's `.php` page names (about.php, ielts.php, …) so existing Google rankings carry over when the other pages are rebuilt.
+- `assets/img/photos/academy-*.jpg`: Casper Academy's own classroom photos.
+- `assets/img/achievers/*.jpg`: Casper Academy's own student result posters.
+- All other photos are from Unsplash (free under the Unsplash License, no attribution required).
