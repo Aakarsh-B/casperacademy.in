@@ -1,4 +1,4 @@
-# Casper Academy of Excellence — website
+# Casper Academy of Excellence website
 
 Plain HTML, CSS and JavaScript. No build step.
 
@@ -17,7 +17,7 @@ Open `index.html` in a browser.
 Upload the contents of this folder (index.html and the assets folder) into `public_html` using Hostinger's File Manager, or connect the GitHub repo under **Websites → Advanced → Git**.
 
 ## Photos
-- `assets/img/photos/academy-*.jpg` — Casper Academy's own classroom photos (from the current site).
+- `assets/img/photos/academy-*.jpg`: Casper Academy's own classroom photos (from the current site).
 - All other photos are from Unsplash (free under the Unsplash License, no attribution required):
   hero `photo-1571260899304-425eee4c7efc`, IELTS `1596495578065-6e0763fa1178`, PTE `1513258496099-48168024aec0`,
   OET `1559839734-2b71ea197ec2`, English `1543269865-cbf427effbad`, German `1587330979470-3595ac045ab0`,

@@ -1,5 +1,5 @@
 /* =========================================================
-   Casper Academy of Excellence — homepage
+   Casper Academy of Excellence homepage
    Brand: navy + crimson (sampled from the logo) + white
    ========================================================= */
 
@@ -169,7 +169,6 @@ h1, h2, h3, p, figure, blockquote, dl, dd { margin: 0; }
   font-weight: 600; font-size: 1rem; color: rgba(255,255,255,.9);
   margin-bottom: 22px;
 }
-.hero__kicker::before { content: ""; width: 28px; height: 2px; background: var(--red); }
 .hero__title {
   font-family: var(--serif);
   font-weight: 400;
