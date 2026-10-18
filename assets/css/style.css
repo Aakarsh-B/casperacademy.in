@@ -579,7 +579,7 @@ h1, h2, h3, p, figure, blockquote, dl, dd { margin: 0; }
 .phero--contact { padding-bottom: 64px; }
 
 /* ---------- Contact ---------- */
-.contact-cards { display: grid; grid-template-columns: repeat(4, 1fr); gap: 16px; margin-top: 40px; }
+.contact-cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-top: 40px; }
 .ccard { position: relative; background: var(--white); border-radius: 20px; padding: 24px; display: grid; gap: 6px; align-content: start; }
 .ccard svg { width: 40px; height: 40px; padding: 9px; border-radius: 12px; background: #fbe8ec; color: var(--red); margin-bottom: 8px; }
 .ccard__title { font-size: .9rem; font-weight: 600; color: var(--muted); }
@@ -660,7 +660,6 @@ h1, h2, h3, p, figure, blockquote, dl, dd { margin: 0; }
 
 @media (max-width: 67.5em) {
   .features__grid--3 { grid-template-columns: repeat(2, 1fr); }
-  .contact-cards { grid-template-columns: repeat(2, 1fr); }
   .gallery__grid--square { grid-template-columns: repeat(3, 1fr); }
   .footer__top { grid-template-columns: 1fr 1fr 1fr; }
   .footer__brand { grid-column: 1 / -1; }

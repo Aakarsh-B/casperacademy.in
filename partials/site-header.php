@@ -34,6 +34,7 @@ $header_style = page_opt('header') === 'overlay' ? 'header--overlay' : 'header--
           </ul>
         </li>
         <li><a href="/gallery"<?= nav_current('gallery') ?>>Gallery</a></li>
+        <li><a href="/essay"<?= nav_current('essay') ?>>Essays</a></li>
         <li><a href="/blog/"<?= nav_current('blog') ?>>Blog</a></li>
         <li class="nav__cta-item"><a class="btn btn--red btn--sm" href="/contact"<?= nav_current('contact') ?>>Contact</a></li>
       </ul>

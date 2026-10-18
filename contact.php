@@ -36,11 +36,11 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 }
 
 $page = [
-  'title' => 'Contact Casper Academy of Excellence | IELTS Coaching Centre in Vyttila, Kochi',
-  'description' => 'Visit Casper Academy of Excellence at 1st Floor, Thevannathu Building, S.A. Road, Vyttila, Kochi, call +91 81 36 835 444 or send an enquiry about IELTS, PTE, OET, English or German classes.',
+  'title' => 'Contact Casper Academy of Excellence | Online IELTS Coaching',
+  'description' => 'Call +91 81 36 835 444, WhatsApp us or send an enquiry about online IELTS, PTE, OET, Communicative English or German classes at Casper Academy of Excellence.',
   'path' => '/contact',
   'nav' => 'contact',
-  'image' => '/assets/img/gallery/class-3.jpg',
+  'image' => '/assets/img/photos/contact-hero.jpg',
 ];
 include __DIR__ . '/partials/header.php';
 $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' . $k . '-error"' : '';
@@ -74,11 +74,6 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
           <h2 class="ccard__title">Email</h2>
           <a href="mailto:info@casperacademy.in">info@casperacademy.in</a>
         </li>
-        <li class="ccard">
-          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 21s-7-6.2-7-11.5a7 7 0 0 1 14 0C19 14.8 12 21 12 21Z" fill="none" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="9.5" r="2.5" fill="currentColor"/></svg>
-          <h2 class="ccard__title">Address</h2>
-          <a href="https://www.google.com/maps/search/?api=1&amp;query=Casper+Academy+of+Excellence+Vyttila+Kochi" target="_blank" rel="noopener">1st Floor, Thevannathu Building, S.A. Road, Vyttila, Kochi</a>
-        </li>
       </ul>
     </div>
   </section>
@@ -89,8 +84,7 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
         <h2 class="h2">Send us an enquiry</h2>
         <p class="lead">Tell us which course you're interested in and we'll call you back.</p>
         <figure class="enquiry__photo">
-          <img src="/assets/img/gallery/class-3.jpg" alt="The Thevannathu Building on S.A. Road, Vyttila, where Casper Academy is on the 1st floor" loading="lazy" width="1087" height="816">
-          <figcaption>We're on the 1st floor of the Thevannathu Building, S.A. Road, Vyttila.</figcaption>
+          <img src="/assets/img/photos/contact-hero.jpg" alt="Students smiling as they work together around a laptop" loading="lazy" width="1400" height="1100">
         </figure>
       </div>
 
@@ -146,11 +140,6 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
         </form>
       </div>
     </div>
-  </section>
-
-  <section class="map" aria-label="Map">
-    <iframe title="Map showing Casper Academy of Excellence in Vyttila, Kochi" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
-      src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d31436.696558222047!2d76.315221!3d9.968272!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0xcf67eeca87e40191!2sCasper%20Academy%20Of%20Excellence!5e0!3m2!1sen!2sin!4v1671273924905!5m2!1sen!2sin"></iframe>
   </section>
 
 </main>

@@ -3,7 +3,7 @@
 <?php
 $org = [
   '@context' => 'https://schema.org',
-  '@type' => ['EducationalOrganization', 'LocalBusiness'],
+  '@type' => 'EducationalOrganization',
   '@id' => $site . '/#organization',
   'name' => 'Casper Academy of Excellence',
   'url' => $site . '/',
@@ -11,13 +11,6 @@ $org = [
   'image' => $site . '/assets/img/photos/academy-2.jpg',
   'telephone' => '+91 8136835444',
   'email' => 'info@casperacademy.in',
-  'address' => [
-    '@type' => 'PostalAddress',
-    'streetAddress' => '1st Floor, Thevannathu Building, S.A. Road, Vyttila',
-    'addressLocality' => 'Kochi',
-    'addressRegion' => 'Kerala',
-    'addressCountry' => 'IN',
-  ],
   'sameAs' => [
     'https://www.facebook.com/casperacademyofexcellencekochi/',
     'https://www.linkedin.com/company/casper-academy-of-excellence/',

@@ -8,7 +8,6 @@ $page['schema'] = [
     'description' => $page['description'],
     'provider' => ['@id' => 'https://www.casperacademy.in/#organization'],
     'hasCourseInstance' => [
-      ['@type' => 'CourseInstance', 'courseMode' => 'Onsite', 'location' => 'Vyttila, Kochi'],
       ['@type' => 'CourseInstance', 'courseMode' => 'Online'],
     ],
   ],

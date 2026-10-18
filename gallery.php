@@ -6,11 +6,10 @@ $photos = [
   ['/assets/img/photos/academy-3.jpg', 'A trainer guiding a class', 1200, 900],
   ['/assets/img/photos/academy-1.jpg', 'A class in session', 1200, 900],
   ['/assets/img/gallery/class-1.jpg', 'A Casper Academy classroom with blue chairs and writing desks', 1280, 960],
-  ['/assets/img/gallery/class-3.jpg', 'The Thevannathu Building on S.A. Road, Vyttila, home of Casper Academy', 1087, 816],
 ];
 $page = [
-  'title' => 'Gallery | Casper Academy of Excellence, Vyttila, Kochi',
-  'description' => 'Photos of Casper Academy of Excellence classrooms in Vyttila, Kochi, and the IELTS and PTE results of our students.',
+  'title' => 'Gallery | Casper Academy of Excellence',
+  'description' => 'Photos from Casper Academy of Excellence classes and the IELTS and PTE results of our students.',
   'path' => '/gallery',
   'nav' => 'gallery',
   'image' => '/assets/img/gallery/class-2.jpg',

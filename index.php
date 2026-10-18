@@ -104,7 +104,7 @@ include __DIR__ . '/partials/header.php';
   <section class="about" id="about">
     <div class="wrap about__inner">
       <div class="about__photos">
-        <img class="about__photo about__photo--main" src="/assets/img/photos/academy-2.jpg" alt="Students working through study material together at Casper Academy, Vyttila" loading="lazy" width="1200" height="900">
+        <img class="about__photo about__photo--main" src="/assets/img/photos/academy-2.jpg" alt="Students working through study material together at Casper Academy" loading="lazy" width="1200" height="900">
         <img class="about__photo about__photo--small" src="/assets/img/photos/academy-1.jpg" alt="A class in session at Casper Academy" loading="lazy" width="1200" height="900">
       </div>
       <div class="about__text">
