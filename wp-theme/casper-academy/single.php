@@ -51,7 +51,7 @@ while (have_posts()) : the_post();
         <?php if (comments_open() || get_comments_number()) comments_template(); ?>
       </div>
 
-      <aside class="article__aside">
+      <div class="article__aside">
         <div class="aside-cta">
           <p class="aside-cta__title">Join the Best Institute for IELTS Preparation</p>
           <a class="btn btn--white" href="tel:+918136835444">Call +91 81 36 835 444</a>
@@ -70,7 +70,7 @@ while (have_posts()) : the_post();
           </div>
         <?php endif; ?>
         <?php get_search_form(); ?>
-      </aside>
+      </div>
     </div>
 
   </article>
@@ -82,7 +82,7 @@ while (have_posts()) : the_post();
       <div class="wrap">
         <h2 class="h2">Keep reading</h2>
         <div class="bgrid">
-          <?php while ($related->have_posts()) : $related->the_post(); get_template_part('template-parts/card'); endwhile; wp_reset_postdata(); ?>
+          <?php while ($related->have_posts()) : $related->the_post(); get_template_part('template-parts/card', null, ['heading' => 'h3']); endwhile; wp_reset_postdata(); ?>
         </div>
       </div>
     </section>

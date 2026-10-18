@@ -14,7 +14,7 @@
       </div>
 
       <div class="footer__col">
-        <h3>Address</h3>
+        <h2>Address</h2>
         <ul class="contact">
           <li>1st Floor, Thevannathu Building, S.A. Road, Vyttila, Kochi</li>
           <li><a href="tel:+914844863444">+91 48 44 863 444</a></li>
@@ -24,7 +24,7 @@
       </div>
 
       <div class="footer__col">
-        <h3>Courses</h3>
+        <h2>Courses</h2>
         <ul>
           <li><a href="/ielts">IELTS</a></li>
           <li><a href="/pte">PTE</a></li>
@@ -40,8 +40,8 @@
       <a class="totop" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>
-</footer>
-
-<a class="whatsapp" href="https://api.whatsapp.com/send?phone=918136835444&amp;text=Hi" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <a class="whatsapp" href="https://api.whatsapp.com/send?phone=918136835444&amp;text=Hi" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
   <svg viewBox="0 0 32 32"><path fill="currentColor" d="M16 3a13 13 0 0 0-11.2 19.6L3 29l6.6-1.7A13 13 0 1 0 16 3Zm0 23.6c-2 0-4-.5-5.6-1.6l-.4-.2-3.9 1 1-3.8-.3-.4A10.6 10.6 0 1 1 16 26.6Zm5.8-7.9c-.3-.2-1.9-.9-2.2-1-.3-.1-.5-.2-.7.2l-1 1.2c-.2.2-.4.2-.7.1a8.7 8.7 0 0 1-4.3-3.8c-.3-.6.3-.5.9-1.7.1-.2 0-.4 0-.5l-1-2.4c-.3-.6-.5-.5-.7-.5h-.6c-.2 0-.5 0-.8.4-.3.3-1 1-1 2.5s1.1 2.9 1.2 3.1c.2.2 2.1 3.3 5.2 4.6 1.9.8 2.7.9 3.6.7.6-.1 1.9-.8 2.1-1.5.3-.7.3-1.3.2-1.5l-.2-.3Z"/></svg>
 </a>
+</footer>
+

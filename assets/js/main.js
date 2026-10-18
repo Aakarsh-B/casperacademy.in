@@ -3,13 +3,15 @@
   var nav = document.getElementById('nav');
   var burger = document.getElementById('burger');
 
-  // Solid header once the page scrolls past the top
-  var alwaysSolid = header.classList.contains('is-fixed-solid');
-  function onScroll() {
-    header.classList.toggle('is-solid', alwaysSolid || window.scrollY > 24);
+  // The homepage's overlay header turns solid once the page scrolls past the top.
+  // Inner pages render the solid header from the start and never change.
+  if (header.classList.contains('header--overlay')) {
+    var onScroll = function () {
+      header.classList.toggle('is-solid', window.scrollY > 24);
+    };
+    onScroll();
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
-  onScroll();
-  window.addEventListener('scroll', onScroll, { passive: true });
 
   // Mobile menu
   function setMenu(open) {

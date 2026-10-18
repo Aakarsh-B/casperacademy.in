@@ -26,7 +26,12 @@ foreach ($pages as $name) {
   $html = preg_replace_callback('#(href|src)="/([^"]*)"#', function ($m) use ($built) {
     [$all, $attr, $path] = $m;
     if (str_starts_with($path, 'assets/') || $path === 'favicon.ico') return "$attr=\"../$path\"";
-    if (str_starts_with($path, 'blog')) return "$attr=\"https://www.casperacademy.in/$path\"";
+    if (str_starts_with($path, 'blog')) {
+      // Use the static blog preview when it has been built (tools/build-blog-preview.py), else the live blog
+      return is_file(__DIR__ . '/../preview/blog/index.html') && trim($path, '/') === 'blog'
+        ? "$attr=\"blog/index.html\""
+        : "$attr=\"https://www.casperacademy.in/$path\"";
+    }
     if ($path === '') return "$attr=\"index.html\"";
     [$slug, $hash] = array_pad(explode('#', $path, 2), 2, null);
     $slug = trim($slug, '/');

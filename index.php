@@ -5,6 +5,7 @@ $page = [
   'path' => '/',
   'nav' => 'home',
   'preload' => '/assets/img/photos/hero.jpg',
+  'header' => 'overlay',
 ];
 include __DIR__ . '/partials/header.php';
 ?>

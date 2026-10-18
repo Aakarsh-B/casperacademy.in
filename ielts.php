@@ -34,7 +34,6 @@ $page = [
   'nav' => 'ielts',
   'image' => '/assets/img/photos/ielts-hero.jpg',
   'preload' => '/assets/img/photos/ielts-hero.jpg',
-  'solid' => true,
   'schema' => [
     [
       '@context' => 'https://schema.org',
@@ -161,7 +160,7 @@ include __DIR__ . '/partials/header.php';
         </div>
       </header>
     </div>
-    <ul class="achievers__track" id="achievers">
+    <ul class="achievers__track" id="achievers" tabindex="0" aria-label="Our Achievers, scroll sideways for more">
 <?php foreach ($achievers as [$slug, $name, $test, $overall, $s]): ?>
       <li class="achiever">
         <img src="/assets/img/achievers/<?= $slug ?>.jpg" loading="lazy" width="640" height="640"

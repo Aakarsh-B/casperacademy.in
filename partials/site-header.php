@@ -5,7 +5,12 @@ require_once __DIR__ . '/helpers.php';
 <a class="skip" href="#main">Skip to content</a>
 
 <!-- ============ Header ============ -->
-<header class="header<?= page_opt('solid') ? ' is-solid is-fixed-solid' : '' ?>" id="header">
+<?php
+// Two header styles: 'overlay' (transparent over the homepage hero, turns white on scroll)
+// and 'solid' (white, used on every other page and the default).
+$header_style = page_opt('header') === 'overlay' ? 'header--overlay' : 'header--solid is-solid';
+?>
+<header class="header <?= $header_style ?>" id="header">
   <div class="wrap header__inner">
     <a class="brand" href="/" aria-label="Casper Academy of Excellence home">
       <img class="brand__light" src="/assets/img/logo-white.png" alt="Casper Academy of Excellence" width="278" height="103">

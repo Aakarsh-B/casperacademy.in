@@ -1,4 +1,4 @@
-<?php $cat = casper_primary_category(); ?>
+<?php $h = ($args['heading'] ?? 'h2') === 'h3' ? 'h3' : 'h2'; ?>
 <article <?php post_class('bcard'); ?>>
   <a class="bcard__link" href="<?php the_permalink(); ?>">
     <div class="bcard__media">
@@ -11,7 +11,7 @@
         <time datetime="<?= esc_attr(get_the_date('c')) ?>"><?= esc_html(get_the_date('j M Y')) ?></time>
         <span><?= casper_reading_time() ?> min read</span>
       </p>
-      <h3 class="bcard__title"><?php the_title(); ?></h3>
+      <<?= $h ?> class="bcard__title"><?php the_title(); ?></<?= $h ?>>
       <p class="bcard__excerpt"><?= esc_html(get_the_excerpt()) ?></p>
     </div>
   </a>

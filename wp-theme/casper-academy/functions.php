@@ -48,7 +48,7 @@ add_filter('wp_resource_hints', function ($urls, $type) {
  */
 function casper_part($name) {
   // WordPress owns the global $page, so the shared parts read $casper_page here.
-  $GLOBALS['casper_page'] = ['nav' => 'blog', 'solid' => true];
+  $GLOBALS['casper_page'] = ['nav' => 'blog', 'header' => 'solid'];
   $file = dirname(untrailingslashit(ABSPATH)) . "/partials/$name.php";
   if (file_exists($file)) {
     include $file;
@@ -72,3 +72,25 @@ function casper_primary_category($post = null) {
   $cats = get_the_category($post);
   return $cats ? $cats[0] : null;
 }
+
+/**
+ * Accessible headings inside posts: drop empty headings, and when a post uses h3 as its
+ * top level (no h2), lift every heading one level so the outline goes h1 > h2 > h3.
+ * Only changes the output; the saved post is untouched.
+ */
+add_filter('the_content', function ($html) {
+  $html = preg_replace('#<h([1-6])[^>]*>(\s|&nbsp;|<br\s*/?>)*</h\1>#i', '', $html);
+  if (stripos($html, '<h2') === false && stripos($html, '<h3') !== false) {
+    $html = preg_replace_callback('#<(/?)h([3-6])\b#i', function ($m) {
+      return '<' . $m[1] . 'h' . ($m[2] - 1);
+    }, $html);
+  }
+  return $html;
+}, 20);
+
+/** Comment form title as h2 so it follows the article's h1 in order. */
+add_filter('comment_form_defaults', function ($d) {
+  $d['title_reply_before'] = '<h2 id="reply-title" class="comment-reply-title">';
+  $d['title_reply_after'] = '</h2>';
+  return $d;
+});

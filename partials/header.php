@@ -4,11 +4,13 @@
  * Set $page before including:
  *   title, description, path (e.g. '/ielts'), nav (active menu key),
  *   image (social preview, optional), preload (hero image, optional),
- *   solid (true for pages without a dark hero), schema (array of extra JSON-LD, optional)
+ *   header ('overlay' only for pages with a dark photo hero; default is the solid white header),
+ *   schema (array of extra JSON-LD, optional)
  */
 $site = 'https://www.casperacademy.in';
-$page += ['image' => '/assets/img/photos/hero.jpg', 'preload' => null, 'solid' => false, 'schema' => [], 'noindex' => false];
+$page += ['image' => '/assets/img/photos/hero.jpg', 'preload' => null, 'header' => 'solid', 'schema' => [], 'noindex' => false];
 require_once __DIR__ . '/helpers.php';
+$GLOBALS['page'] = $page; // shared parts read it via page_opt(), even when included from a function
 ?><!doctype html>
 <html lang="en">
 <head>

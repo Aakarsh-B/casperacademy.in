@@ -5,7 +5,6 @@ $page = [
   'description' => 'This page does not exist. Find IELTS, PTE, OET, Communicative English and German Language courses at Casper Academy of Excellence, Kochi.',
   'path' => '/404',
   'nav' => '',
-  'solid' => true,
   'noindex' => true,
 ];
 include __DIR__ . '/partials/header.php';
