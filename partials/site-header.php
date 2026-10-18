@@ -1,0 +1,44 @@
+<?php
+// Site header markup. Used by partials/header.php and the WordPress blog theme. Reads page settings via page_opt().
+require_once __DIR__ . '/helpers.php';
+?>
+<a class="skip" href="#main">Skip to content</a>
+
+<!-- ============ Header ============ -->
+<header class="header<?= page_opt('solid') ? ' is-solid is-fixed-solid' : '' ?>" id="header">
+  <div class="wrap header__inner">
+    <a class="brand" href="/" aria-label="Casper Academy of Excellence home">
+      <img class="brand__light" src="/assets/img/logo-white.png" alt="Casper Academy of Excellence" width="278" height="103">
+      <img class="brand__dark" src="/assets/img/logo.png" alt="" width="278" height="103">
+    </a>
+
+    <nav class="nav" id="nav" aria-label="Main">
+      <ul class="nav__list">
+        <li><a href="/"<?= nav_current('home') ?>>Home</a></li>
+        <li><a href="/about"<?= nav_current('about') ?>>About</a></li>
+        <li class="nav__has-sub">
+          <button class="nav__sub-toggle<?= in_array(page_opt('nav'), ['ielts','pte','oet','english','german'], true) ? ' is-current' : '' ?>" aria-expanded="false" aria-controls="sub-courses">Courses
+            <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
+          </button>
+          <ul class="nav__sub" id="sub-courses">
+            <li><a href="/ielts">IELTS</a></li>
+            <li><a href="/pte">PTE</a></li>
+            <li><a href="/oet">OET</a></li>
+            <li><a href="/communicative-english">Communicative English</a></li>
+            <li><a href="/german-language">German Language</a></li>
+          </ul>
+        </li>
+        <li><a href="/services"<?= nav_current('services') ?>>Services</a></li>
+        <li><a href="/gallery"<?= nav_current('gallery') ?>>Gallery</a></li>
+        <li><a href="/essay"<?= nav_current('essay') ?>>Essay</a></li>
+        <li><a href="/faq"<?= nav_current('faq') ?>>FAQ</a></li>
+        <li><a href="/blog/"<?= nav_current('blog') ?>>Blog</a></li>
+        <li class="nav__cta-item"><a class="btn btn--red btn--sm" href="/contact">Contact</a></li>
+      </ul>
+    </nav>
+
+    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
+      <span></span><span></span>
+    </button>
+  </div>
+</header>

@@ -8,11 +8,7 @@
  */
 $site = 'https://www.casperacademy.in';
 $page += ['image' => '/assets/img/photos/hero.jpg', 'preload' => null, 'solid' => false, 'schema' => [], 'noindex' => false];
-function nav_current($key) {
-  global $page;
-  return ($page['nav'] ?? '') === $key ? ' aria-current="page"' : '';
-}
-function e($s) { return htmlspecialchars($s, ENT_QUOTES); }
+require_once __DIR__ . '/helpers.php';
 ?><!doctype html>
 <html lang="en">
 <head>
@@ -48,43 +44,4 @@ function e($s) { return htmlspecialchars($s, ENT_QUOTES); }
 </head>
 <body id="top">
 
-<a class="skip" href="#main">Skip to content</a>
-
-<!-- ============ Header ============ -->
-<header class="header<?= !empty($page['solid']) ? ' is-solid is-fixed-solid' : '' ?>" id="header">
-  <div class="wrap header__inner">
-    <a class="brand" href="/" aria-label="Casper Academy of Excellence home">
-      <img class="brand__light" src="/assets/img/logo-white.png" alt="Casper Academy of Excellence" width="278" height="103">
-      <img class="brand__dark" src="/assets/img/logo.png" alt="" width="278" height="103">
-    </a>
-
-    <nav class="nav" id="nav" aria-label="Main">
-      <ul class="nav__list">
-        <li><a href="/"<?= nav_current('home') ?>>Home</a></li>
-        <li><a href="/about"<?= nav_current('about') ?>>About</a></li>
-        <li class="nav__has-sub">
-          <button class="nav__sub-toggle<?= in_array($page['nav'] ?? '', ['ielts','pte','oet','english','german']) ? ' is-current' : '' ?>" aria-expanded="false" aria-controls="sub-courses">Courses
-            <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
-          </button>
-          <ul class="nav__sub" id="sub-courses">
-            <li><a href="/ielts">IELTS</a></li>
-            <li><a href="/pte">PTE</a></li>
-            <li><a href="/oet">OET</a></li>
-            <li><a href="/communicative-english">Communicative English</a></li>
-            <li><a href="/german-language">German Language</a></li>
-          </ul>
-        </li>
-        <li><a href="/services"<?= nav_current('services') ?>>Services</a></li>
-        <li><a href="/gallery"<?= nav_current('gallery') ?>>Gallery</a></li>
-        <li><a href="/essay"<?= nav_current('essay') ?>>Essay</a></li>
-        <li><a href="/faq"<?= nav_current('faq') ?>>FAQ</a></li>
-        <li><a href="/blog/"<?= nav_current('blog') ?>>Blog</a></li>
-        <li class="nav__cta-item"><a class="btn btn--red btn--sm" href="/contact">Contact</a></li>
-      </ul>
-    </nav>
-
-    <button class="burger" id="burger" aria-label="Open menu" aria-expanded="false" aria-controls="nav">
-      <span></span><span></span>
-    </button>
-  </div>
-</header>
+<?php include __DIR__ . '/site-header.php'; ?>

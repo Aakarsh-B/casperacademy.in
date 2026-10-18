@@ -13,6 +13,7 @@ assets/              css, js, images
 .htaccess            https + www, clean URLs, old .php links -> new, 404
 sitemap.xml, robots.txt
 router.php           local preview only
+wp-theme/casper-academy/  WordPress theme for /blog/ (same header, footer and styles)
 ```
 
 ## Preview locally
@@ -33,3 +34,14 @@ Upload everything except `router.php` and `README.md` to `public_html`
 - `assets/img/photos/academy-*.jpg`: Casper Academy's own classroom photos.
 - `assets/img/achievers/*.jpg`: Casper Academy's own student result posters.
 - All other photos are from Unsplash (free under the Unsplash License, no attribution required).
+
+## Blog (WordPress in /blog/)
+The blog stays on WordPress so posts can be published daily from the dashboard.
+`wp-theme/casper-academy` is a lightweight theme that reuses this site's header, footer
+(`partials/site-header.php`, `partials/site-footer.php`) and `assets/css/style.css`,
+so the blog and the website always match. Blog-only styles are in `blog.css`.
+
+Install: zip the `casper-academy` folder, then in WordPress go to
+**Appearance → Themes → Add New → Upload Theme**, and activate it.
+Deploy the main website first: the theme reads its header and footer from the folder above `/blog/`.
+Posts, URLs, categories, Yoast SEO settings and images are untouched by a theme change.
