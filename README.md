@@ -5,7 +5,12 @@ WordPress stays separate in `/blog/`.
 
 ```
 index.php            homepage
-ielts.php            IELTS course page            -> /ielts
+about.php            /about
+ielts.php, pte.php, oet.php, communicative-english.php, german-language.php
+                     course pages, all rendered by partials/course.php
+gallery.php          /gallery (classroom photos + result posters, photo viewer)
+faq.php, essay.php   /faq and /essay (content in data/faq.json, data/essays.json)
+contact.php          /contact (enquiry form emails info@casperacademy.in via PHP mail())
 404.php              page-not-found
 partials/header.php  <head>, SEO tags, site header (each page sets $page first)
 partials/footer.php  site footer, organisation schema, scripts
@@ -28,6 +33,11 @@ forwards there. After changing a page, rebuild it with `php tools/build-preview.
 The blog preview (`preview/blog/`) is saved from a local WordPress running this theme:
 `python3 tools/build-blog-preview.py http://localhost:8100`.
 The preview is marked noindex; on Hostinger, `.htaccess` ignores `index.html` and hides `preview/`.
+
+## Old addresses
+`.htaccess` permanently redirects every old page: `*.php` to the clean URL, `contact-us` to `/contact`,
+`frequently` to `/faq`, `services` to `/about`, and the 22 old footer keyword pages to the matching course page.
+Tested on Apache 2.4 with this exact file.
 
 ## Add a page
 Copy `ielts.php`, change the `$page` array (title, description, path, nav) and the content,

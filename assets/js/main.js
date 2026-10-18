@@ -107,4 +107,37 @@
       });
     });
   }
+
+  // Gallery photo viewer
+  var lightbox = document.getElementById('lightbox');
+  if (lightbox && lightbox.showModal) {
+    var lbImg = lightbox.querySelector('.lightbox__img');
+    var lbCap = lightbox.querySelector('.lightbox__caption');
+    var opener = null;
+    document.querySelectorAll('[data-lightbox]').forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        opener = btn;
+        lbImg.src = btn.dataset.lightbox;
+        lbImg.alt = btn.dataset.alt;
+        lbCap.textContent = btn.dataset.alt;
+        lightbox.showModal();
+      });
+    });
+    lightbox.addEventListener('click', function (e) { if (e.target === lightbox) lightbox.close(); });
+    lightbox.addEventListener('close', function () { if (opener) opener.focus(); });
+  }
+
+  // Move focus to the enquiry form's status message after submitting
+  var status = document.getElementById('form-status');
+  if (status) status.focus();
+
+  // Static preview (GitHub Pages) can't send email: explain instead of submitting
+  if (document.documentElement.hasAttribute('data-static-preview')) {
+    document.querySelectorAll('.enquiry-form').forEach(function (form) {
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        alert('This is a preview. On the live website this form sends the enquiry to info@casperacademy.in.');
+      });
+    });
+  }
 })();

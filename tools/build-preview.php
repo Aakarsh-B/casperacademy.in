@@ -39,6 +39,7 @@ foreach ($pages as $name) {
     return "$attr=\"404.html\"";
   }, $html);
   // Keep the preview out of Google; the real site is www.casperacademy.in
+  $html = str_replace('<html lang="en">', '<html lang="en" data-static-preview>', $html);
   $html = str_replace('<meta charset="utf-8">', "<meta charset=\"utf-8\">\n  <meta name=\"robots\" content=\"noindex\">", $html);
 
   file_put_contents("$out/$name.html", $html);

@@ -26,19 +26,16 @@ $header_style = page_opt('header') === 'overlay' ? 'header--overlay' : 'header--
             <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
           <ul class="nav__sub" id="sub-courses">
-            <li><a href="/ielts">IELTS</a></li>
-            <li><a href="/pte">PTE</a></li>
-            <li><a href="/oet">OET</a></li>
-            <li><a href="/communicative-english">Communicative English</a></li>
-            <li><a href="/german-language">German Language</a></li>
+            <li><a href="/ielts"<?= nav_current('ielts') ?>>IELTS</a></li>
+            <li><a href="/pte"<?= nav_current('pte') ?>>PTE</a></li>
+            <li><a href="/oet"<?= nav_current('oet') ?>>OET</a></li>
+            <li><a href="/communicative-english"<?= nav_current('english') ?>>Communicative English</a></li>
+            <li><a href="/german-language"<?= nav_current('german') ?>>German Language</a></li>
           </ul>
         </li>
-        <li><a href="/services"<?= nav_current('services') ?>>Services</a></li>
         <li><a href="/gallery"<?= nav_current('gallery') ?>>Gallery</a></li>
-        <li><a href="/essay"<?= nav_current('essay') ?>>Essay</a></li>
-        <li><a href="/faq"<?= nav_current('faq') ?>>FAQ</a></li>
         <li><a href="/blog/"<?= nav_current('blog') ?>>Blog</a></li>
-        <li class="nav__cta-item"><a class="btn btn--red btn--sm" href="/contact">Contact</a></li>
+        <li class="nav__cta-item"><a class="btn btn--red btn--sm" href="/contact"<?= nav_current('contact') ?>>Contact</a></li>
       </ul>
     </nav>
 

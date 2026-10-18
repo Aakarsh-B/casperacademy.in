@@ -17,7 +17,6 @@
         <h2>Address</h2>
         <ul class="contact">
           <li>1st Floor, Thevannathu Building, S.A. Road, Vyttila, Kochi</li>
-          <li><a href="tel:+914844863444">+91 48 44 863 444</a></li>
           <li><a href="tel:+918136835444">+91 81 36 835 444</a></li>
           <li><a href="mailto:info@casperacademy.in">info@casperacademy.in</a></li>
         </ul>
@@ -31,6 +30,17 @@
           <li><a href="/oet">OET</a></li>
           <li><a href="/communicative-english">Communicative English</a></li>
           <li><a href="/german-language">German Language</a></li>
+        </ul>
+      </div>
+
+      <div class="footer__col">
+        <h2>Resources</h2>
+        <ul>
+          <li><a href="/ielts#score-calculator">IELTS score calculator</a></li>
+          <li><a href="/essay">IELTS essays</a></li>
+          <li><a href="/faq">FAQ</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/gallery">Gallery</a></li>
         </ul>
       </div>
     </div>

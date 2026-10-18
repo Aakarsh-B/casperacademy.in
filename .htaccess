@@ -12,19 +12,29 @@ RewriteRule ^(.*)$ https://www.casperacademy.in/$1 [R=301,L]
 
 # 2. /index.php, /index.html (GitHub Pages preview stub) and /index -> /
 RewriteRule ^index(\.php|\.html)?$ / [R=301,L]
-RewriteRule ^(preview|tools|wp-theme|dist)(/.*)?$ - [R=404,L]
+RewriteRule ^(preview|tools|wp-theme|dist|partials|data)(/.*)?$ - [R=404,L]
+RewriteRule ^(router\.php|README\.md|\.git.*)$ - [R=404,L]
 
-# 3. Old page addresses -> new ones
+# 3. Old page addresses -> new ones (keeps Google rankings and old links working)
 RewriteRule ^contact-us(\.php)?$ /contact [R=301,L]
 RewriteRule ^frequently(\.php)?$ /faq [R=301,L]
+RewriteRule ^services(\.php)?$ /about [R=301,L]
+RewriteRule ^ielts-score-calculator(\.php)?$ /ielts#score-calculator [R=301,NE,L]
+# Old keyword pages from the footer, merged into the course pages
+RewriteRule ^(ielts-ernakulam|ielts-training-centre-in-kochi|ielts-institute-in-kochi|ielts-training-centre-in-kerala|ielts-exam-registration-in-kochi|online-ielts-coaching|ielts-coaching-centre-kochi|ielts-coaching-in-kochi|best-ielts-coaching-in-ernakulam|top-ielts-coaching-centre-in-kochi|best-ielts-coaching-centre-in-kochi|ielts-institute-in-kerala|ielts-coaching-institutes-in-kochi|best-ielts-coaching-centre-in-kerala|ielts-coaching-centre-in-kerala|your-pathway-to-success-in-ielts-education)(\.php)?$ /ielts [R=301,L]
+RewriteRule ^pte-coaching-centre-kochi(\.php)?$ /pte [R=301,L]
+RewriteRule ^(oet-kochi|best-oet-coaching-centre-in-kochi)(\.php)?$ /oet [R=301,L]
+RewriteRule ^(german-coaching-in-kochi|german-language-course-in-kochi|german-language-institute-in-ernakulam)(\.php)?$ /german-language [R=301,L]
 
 # 4. Any other /page.php in the site root -> /page
+RewriteCond %{ENV:REDIRECT_STATUS} ^$
 RewriteCond %{THE_REQUEST} \s/([a-z0-9-]+)\.php[\s?] [NC]
 RewriteRule ^ /%1 [R=301,L]
 
 # 5. Serve /page from page.php
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME}.php -f
+RewriteCond $1 !^router$
 RewriteRule ^([a-z0-9-]+)/?$ $1.php [L]
 
 ErrorDocument 404 /404.php
