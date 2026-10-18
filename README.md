@@ -22,9 +22,14 @@ php -S localhost:8000 router.php
 ```
 Then open http://localhost:8000
 
+## GitHub Pages preview link
+GitHub Pages can't run PHP, so `preview/` holds static HTML copies of the pages and `index.html`
+forwards there. After changing a page, rebuild it with `php tools/build-preview.php` and commit.
+The preview is marked noindex; on Hostinger, `.htaccess` ignores `index.html` and hides `preview/`.
+
 ## Add a page
 Copy `ielts.php`, change the `$page` array (title, description, path, nav) and the content,
-add it to `sitemap.xml`. `/new-page` is served from `new-page.php` automatically.
+add it to `sitemap.xml`, then run `php tools/build-preview.php`. `/new-page` is served from `new-page.php` automatically.
 
 ## Deploy to Hostinger
 Upload everything except `router.php` and `README.md` to `public_html`

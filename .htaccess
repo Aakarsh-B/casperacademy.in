@@ -2,6 +2,7 @@
 # WordPress in /blog/ has its own .htaccess and is not affected by the page rules below.
 
 Options -MultiViews
+DirectoryIndex index.php
 RewriteEngine On
 
 # 1. Always https://www.casperacademy.in
@@ -9,8 +10,9 @@ RewriteCond %{HTTP_HOST} ^casperacademy\.in$ [NC,OR]
 RewriteCond %{HTTPS} off
 RewriteRule ^(.*)$ https://www.casperacademy.in/$1 [R=301,L]
 
-# 2. /index.php (and /index) -> /
-RewriteRule ^index(\.php)?$ / [R=301,L]
+# 2. /index.php, /index.html (GitHub Pages preview stub) and /index -> /
+RewriteRule ^index(\.php|\.html)?$ / [R=301,L]
+RewriteRule ^(preview|tools|wp-theme|dist)(/.*)?$ - [R=404,L]
 
 # 3. Old page addresses -> new ones
 RewriteRule ^contact-us(\.php)?$ /contact [R=301,L]
