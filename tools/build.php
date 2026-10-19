@@ -153,7 +153,7 @@ file_put_contents("$out/_redirects", "\n# Old .php addresses (generated)\n$extra
 copy("$root/_headers", "$out/_headers");
 
 // Cloudflare Workers config (the deploy runs `npx wrangler deploy` in dist/); not served as a file
-copy("$root/wrangler.jsonc", "$out/wrangler.jsonc");
-file_put_contents("$out/.assetsignore", "wrangler.jsonc\n.assetsignore\n.nojekyll\n");
+copy(__DIR__ . "/wrangler.jsonc", "$out/wrangler.jsonc");
+file_put_contents("$out/.assetsignore", ".git\nwrangler.jsonc\n.assetsignore\n.nojekyll\n");
 
 echo "Built into dist/\n";

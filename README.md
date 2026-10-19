@@ -25,7 +25,7 @@ blog/images              images uploaded in Pages CMS
 tools/build.php          builds everything into dist/ (site pages + blog + sitemap + feed + redirects)
 tools/blog.php           blog templates (same markup as the old WordPress theme)
 _redirects, _headers     Cloudflare redirects (old addresses) and headers
-wrangler.jsonc           Cloudflare Workers config, copied into dist/ (Cloudflare runs `npx wrangler deploy` there)
+tools/wrangler.jsonc     Cloudflare Workers config, copied into dist/ (Cloudflare runs `npx wrangler deploy` there)
 .github/workflows/deploy.yml   runs the build on every push to main and publishes dist/
                                to the `cloudflare-pages` branch, which Cloudflare deploys
 ```
