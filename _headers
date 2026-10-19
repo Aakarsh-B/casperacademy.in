@@ -1,0 +1,14 @@
+# Cloudflare Pages headers. tools/build.php copies this into dist/
+
+# Keep preview addresses (*.pages.dev) out of Google; the real site is www.casperacademy.in
+https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+/assets/*
+  Cache-Control: public, max-age=2592000
+
+/blog/wp-content/*
+  Cache-Control: public, max-age=31536000
+
+/blog/images/*
+  Cache-Control: public, max-age=31536000

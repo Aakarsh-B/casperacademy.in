@@ -2,4 +2,3 @@ User-agent: *
 Allow: /
 
 Sitemap: https://www.casperacademy.in/sitemap.xml
-Sitemap: https://www.casperacademy.in/blog/sitemap_index.xml

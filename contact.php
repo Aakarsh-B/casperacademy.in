@@ -2,7 +2,10 @@
 /*
  * Contact page with an enquiry form. The form posts back here and is emailed to info@casperacademy.in
  * with PHP mail() (works on Hostinger; the From address must be a mailbox on casperacademy.in).
+ * In the static build (tools/build.php defines STATIC_BUILD) the form posts to FormSubmit instead,
+ * which emails the same address, and the checks below run in the browser (see the script at the end).
  */
+$static = defined('STATIC_BUILD');
 $to = 'info@casperacademy.in';
 $courses = ['IELTS', 'PTE', 'Communicative English', 'Not sure yet'];
 $errors = [];
@@ -89,7 +92,15 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
       </div>
 
       <div class="form-card">
-<?php if ($status === '1'): ?>
+<?php if ($static): ?>
+        <div class="form-status form-status--ok" role="status" tabindex="-1" id="form-sent" hidden>
+          <h3>Enquiry sent</h3>
+          <p>Thank you. We'll call you back soon. For anything urgent, call <a href="tel:+918136835444">+91 81 36 835 444</a>.</p>
+        </div>
+        <div class="form-status form-status--err" role="alert" tabindex="-1" id="form-errors" hidden>
+          <h3></h3>
+        </div>
+<?php elseif ($status === '1'): ?>
         <div class="form-status form-status--ok" role="status" tabindex="-1" id="form-status">
           <h3>Enquiry sent</h3>
           <p>Thank you. We'll call you back soon. For anything urgent, call <a href="tel:+918136835444">+91 81 36 835 444</a>.</p>
@@ -105,7 +116,15 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
           <h3>Check <?= count($errors) === 1 ? 'one field' : count($errors) . ' fields' ?> below</h3>
         </div>
 <?php endif; ?>
+<?php if ($static): ?>
+        <form class="enquiry-form" method="post" action="https://formsubmit.co/<?= $to ?>" novalidate>
+          <input type="hidden" name="_subject" value="Website enquiry">
+          <input type="hidden" name="_next" value="https://www.casperacademy.in/contact?sent=1#enquiry">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+<?php else: ?>
         <form class="enquiry-form" method="post" action="/contact#enquiry" novalidate>
+<?php endif; ?>
           <div class="field">
             <label for="name">Name</label>
             <input id="name" name="name" type="text" autocomplete="name" required value="<?= e($old['name']) ?>"<?= $err('name') ?>>
@@ -134,8 +153,12 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
             <label for="message">Message <span class="field__opt">(optional)</span></label>
             <textarea id="message" name="message" rows="4"><?= e($old['message']) ?></textarea>
           </div>
+<?php if ($static): ?>
+          <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="_honey" type="text" tabindex="-1" autocomplete="off"></div>
+<?php else: ?>
           <div class="hp" aria-hidden="true"><label for="website">Leave this empty</label><input id="website" name="website" type="text" tabindex="-1" autocomplete="off"></div>
           <input type="hidden" name="t" value="<?= time() ?>">
+<?php endif; ?>
           <button class="btn btn--red field--full" type="submit">Send enquiry</button>
         </form>
       </div>
@@ -144,4 +167,38 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
 
 </main>
 
+<?php if ($static): ?>
+<script>
+// Same checks and messages as the PHP version, run before the form goes to FormSubmit
+(function () {
+  var form = document.querySelector('.enquiry-form'), box = document.getElementById('form-errors');
+  if (new URLSearchParams(location.search).get('sent') === '1') {
+    var ok = document.getElementById('form-sent'); ok.hidden = false; ok.focus();
+  }
+  form.addEventListener('submit', function (e) {
+    var v = function (id) { return form.elements[id].value.trim(); }, errors = {};
+    if (v('name') === '') errors.name = 'Enter your name.';
+    if (!/^[0-9+\-\s()]{7,20}$/.test(v('phone'))) errors.phone = 'Enter a phone number, for example +91 81 36 835 444.';
+    if (v('email') !== '' && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(v('email'))) errors.email = 'Enter an email address like name@example.com, or leave it empty.';
+    ['name', 'phone', 'email'].forEach(function (k) {
+      var input = form.elements[k], old = document.getElementById(k + '-error');
+      if (old) old.remove();
+      input.removeAttribute('aria-invalid'); input.removeAttribute('aria-describedby');
+      if (errors[k]) {
+        var p = document.createElement('p'); p.className = 'field__error'; p.id = k + '-error'; p.textContent = errors[k];
+        input.setAttribute('aria-invalid', 'true'); input.setAttribute('aria-describedby', k + '-error');
+        input.insertAdjacentElement('afterend', p);
+      }
+    });
+    var n = Object.keys(errors).length;
+    box.hidden = n === 0;
+    if (n) {
+      e.preventDefault();
+      box.querySelector('h3').textContent = 'Check ' + (n === 1 ? 'one field' : n + ' fields') + ' below';
+      box.focus();
+    }
+  });
+})();
+</script>
+<?php endif; ?>
 <?php include __DIR__ . '/partials/footer.php'; ?>

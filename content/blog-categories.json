@@ -1,0 +1,32 @@
+[
+  {
+    "slug": "ielts-preparation",
+    "name": "IELTS Preparation",
+    "description": "IELTS tips for Listening, Reading, Writing and Speaking, plus test format, booking and band score advice."
+  },
+  {
+    "slug": "about-casper",
+    "name": "About Casper",
+    "description": "News and guides from Casper Academy of Excellence, including how to choose the right coaching."
+  },
+  {
+    "slug": "pte-academic",
+    "name": "PTE Academic",
+    "description": "PTE Academic task guides, templates and preparation advice."
+  },
+  {
+    "slug": "english-skills",
+    "name": "English Skills",
+    "description": "Build confident spoken and written English for study, work and everyday life."
+  },
+  {
+    "slug": "study-abroad",
+    "name": "Study Abroad & Visas",
+    "description": "Study abroad costs, visa changes and the English scores you need."
+  },
+  {
+    "slug": "toefl",
+    "name": "TOEFL",
+    "description": "TOEFL iBT format, speaking and writing guides."
+  }
+]
