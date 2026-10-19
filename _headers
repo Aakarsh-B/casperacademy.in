@@ -1,7 +1,10 @@
 # Cloudflare Pages headers. tools/build.php copies this into dist/
 
-# Keep preview addresses (*.pages.dev) out of Google; the real site is www.casperacademy.in
+# Keep preview addresses (*.pages.dev, *.workers.dev) out of Google; the real site is www.casperacademy.in
 https://:project.pages.dev/*
+  X-Robots-Tag: noindex
+
+https://:worker.:account.workers.dev/*
   X-Robots-Tag: noindex
 
 /assets/*

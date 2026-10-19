@@ -1,0 +1,11 @@
+// Cloudflare Workers config for the built site. tools/build.php copies this into dist/,
+// which the GitHub Action publishes to the cloudflare-pages branch; Cloudflare deploys that branch.
+{
+  "name": "casperacademy-in",
+  "compatibility_date": "2026-10-01",
+  "assets": {
+    "directory": ".",
+    "html_handling": "auto-trailing-slash",
+    "not_found_handling": "404-page"
+  }
+}
