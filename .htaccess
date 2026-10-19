@@ -18,6 +18,7 @@ RewriteRule ^(.*)$ https://www.casperacademy.in/$1 [R=301,L]
 RewriteRule ^index(\.php|\.html)?$ https://www.casperacademy.in/ [R=301,L]
 RewriteRule ^(preview|tools|wp-theme|dist|partials|data)(/.*)?$ - [F,L]
 RewriteRule ^(router\.php|README\.md|\.git.*)$ - [F,L]
+RewriteRule (^|/)(error_log|.*\.log|.*\.zip|.*\.sql|\.DS_Store|tidio-pass|htaccess\..*)$ - [F,L]
 
 # 3. Old page addresses -> new ones (keeps Google rankings and old links working)
 RewriteRule ^contact-us(\.php)?$ https://www.casperacademy.in/contact [R=301,L]
@@ -28,7 +29,7 @@ RewriteRule ^spoken-english(\.php)?$ https://www.casperacademy.in/communicative-
 RewriteRule ^python(\.php)?$ https://www.casperacademy.in/ [R=301,L]
 RewriteRule ^ielts-score-calculator(\.php)?$ https://www.casperacademy.in/ielts#score-calculator [R=301,NE,L]
 # Old keyword pages from the footer, merged into the course pages
-RewriteRule ^(ielts-ernakulam|ielts-training-centre-in-kochi|ielts-institute-in-kochi|ielts-training-centre-in-kerala|ielts-exam-registration-in-kochi|online-ielts-coaching|ielts-coaching-centre-kochi|ielts-coaching-in-kochi|best-ielts-coaching-in-ernakulam|top-ielts-coaching-centre-in-kochi|best-ielts-coaching-centre-in-kochi|ielts-institute-in-kerala|ielts-coaching-institutes-in-kochi|best-ielts-coaching-centre-in-kerala|ielts-coaching-centre-in-kerala|your-pathway-to-success-in-ielts-education)(\.php)?$ https://www.casperacademy.in/ielts [R=301,L]
+RewriteRule ^(ielts-ernakulam|ielts-training-centre-in-kochi|ielts-institute-in-kochi|ielts-training-centre-in-kerala|ielts-exam-registration-in-kochi|online-ielts-coaching|ielts-coaching-centre-kochi|ielts-coaching-in-kochi|best-ielts-coaching-in-ernakulam|top-ielts-coaching-centre-in-kochi|best-ielts-coaching-centre-in-kochi|ielts-institute-in-kerala|ielts-coaching-institutes-in-kochi|best-ielts-coaching-centre-in-kerala|ielts-coaching-centre-in-kerala|your-pathway-to-success-in-ielts-education|ielts-exam-registration|top-ielts-coaching-in-kochi-ernakulam|top-ielts-coaching-kochi-ernakulam)(\.php)?$ https://www.casperacademy.in/ielts [R=301,NC,L]
 RewriteRule ^pte-coaching-centre-kochi(\.php)?$ https://www.casperacademy.in/pte [R=301,L]
 # OET and German courses are no longer offered: their pages go to the homepage
 RewriteRule ^(oet|oet-kochi|best-oet-coaching-centre-in-kochi|german-language|german-coaching-in-kochi|german-language-course-in-kochi|german-language-institute-in-ernakulam)(\.php)?$ https://www.casperacademy.in/ [R=301,L]
