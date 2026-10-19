@@ -22,15 +22,13 @@ $header_style = page_opt('header') === 'overlay' ? 'header--overlay' : 'header--
         <li><a href="/"<?= nav_current('home') ?>>Home</a></li>
         <li><a href="/about"<?= nav_current('about') ?>>About</a></li>
         <li class="nav__has-sub">
-          <button class="nav__sub-toggle<?= in_array(page_opt('nav'), ['ielts','pte','oet','english','german'], true) ? ' is-current' : '' ?>" aria-expanded="false" aria-controls="sub-courses">Courses
+          <button class="nav__sub-toggle<?= in_array(page_opt('nav'), ['ielts','pte','english'], true) ? ' is-current' : '' ?>" aria-expanded="false" aria-controls="sub-courses">Courses
             <svg width="10" height="10" viewBox="0 0 10 10" aria-hidden="true"><path d="M2 3.5 5 6.5 8 3.5" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/></svg>
           </button>
           <ul class="nav__sub" id="sub-courses">
             <li><a href="/ielts"<?= nav_current('ielts') ?>>IELTS</a></li>
             <li><a href="/pte"<?= nav_current('pte') ?>>PTE</a></li>
-            <li><a href="/oet"<?= nav_current('oet') ?>>OET</a></li>
             <li><a href="/communicative-english"<?= nav_current('english') ?>>Communicative English</a></li>
-            <li><a href="/german-language"<?= nav_current('german') ?>>German Language</a></li>
           </ul>
         </li>
         <li><a href="/gallery"<?= nav_current('gallery') ?>>Gallery</a></li>

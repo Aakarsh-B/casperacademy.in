@@ -72,23 +72,9 @@ include __DIR__ . '/partials/header.php';
           </a>
         </li>
         <li class="course">
-          <a href="/oet">
-            <img src="/assets/img/photos/course-oet.jpg" alt="" loading="lazy" width="900" height="700">
-            <span class="course__name">OET</span>
-            <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </li>
-        <li class="course">
           <a href="/communicative-english">
             <img src="/assets/img/photos/course-english.jpg" alt="" loading="lazy" width="900" height="700">
             <span class="course__name">Communicative English</span>
-            <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
-          </a>
-        </li>
-        <li class="course">
-          <a href="/german-language">
-            <img src="/assets/img/photos/course-german.jpg" alt="" loading="lazy" width="900" height="700">
-            <span class="course__name">German Language</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </li>
@@ -109,7 +95,7 @@ include __DIR__ . '/partials/header.php';
       </div>
       <div class="about__text">
         <h2 class="about__title">Casper Academy of Excellence<br>Best IELTS Coaching in Kochi</h2>
-        <p class="about__first">Pioneers with over 25 years of experience in the industry enable us to develop the most efficient set of strategies made with purpose of achieving targeted band scores in IELTS, OET and PTE.</p>
+        <p class="about__first">Pioneers with over 25 years of experience in the industry enable us to develop the most efficient set of strategies made with purpose of achieving targeted band scores in IELTS and PTE.</p>
         <p>Casper academy of excellence is the best IELTS coaching centre in Kochi. Our intensive practice sessions and dedicated trainers help you crack the international exams in the 1st attempt and achieve top scores.</p>
       </div>
     </div>
@@ -136,7 +122,7 @@ include __DIR__ . '/partials/header.php';
         </div>
         <div class="join__text">
           <h2 class="h2 h2--light">Join the Best Institute for IELTS Preparation</h2>
-          <p>Casper Academy of Excellence provides the most effective IELTS training available. Professional, result-oriented coaching can help you attain your targeted IELTS and OET scores. Here, you can find the most effective tactics and advice for improving your speaking, writing, reading, and listening abilities. As a result, it has become the leading centre in Kochi for IELTS coaching. Casper Academy also offers training in communicative English and German to assist students create careers in foreign countries.</p>
+          <p>Casper Academy of Excellence provides the most effective IELTS training available. Professional, result-oriented coaching can help you attain your targeted IELTS scores. Here, you can find the most effective tactics and advice for improving your speaking, writing, reading, and listening abilities. As a result, it has become the leading centre in Kochi for IELTS coaching. Casper Academy also offers training in communicative English to assist students create careers in foreign countries.</p>
           <a class="btn btn--white" href="/contact">Join Now</a>
         </div>
       </div>

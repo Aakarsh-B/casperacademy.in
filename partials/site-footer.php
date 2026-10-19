@@ -26,9 +26,7 @@
         <ul>
           <li><a href="/ielts">IELTS</a></li>
           <li><a href="/pte">PTE</a></li>
-          <li><a href="/oet">OET</a></li>
           <li><a href="/communicative-english">Communicative English</a></li>
-          <li><a href="/german-language">German Language</a></li>
         </ul>
       </div>
 

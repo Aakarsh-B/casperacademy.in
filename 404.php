@@ -2,7 +2,7 @@
 http_response_code(404);
 $page = [
   'title' => 'Page not found | Casper Academy of Excellence',
-  'description' => 'This page does not exist. Find IELTS, PTE, OET, Communicative English and German Language courses at Casper Academy of Excellence, Kochi.',
+  'description' => 'This page does not exist. Find IELTS, PTE and Communicative English courses at Casper Academy of Excellence, Kochi.',
   'path' => '/404',
   'nav' => '',
   'noindex' => true,

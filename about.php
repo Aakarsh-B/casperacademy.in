@@ -66,7 +66,7 @@ include __DIR__ . '/partials/header.php';
       </div>
       <div class="about__text">
         <h2 class="about__title">Casper Academy of Excellence<br>Best IELTS Coaching in Kochi</h2>
-        <p class="about__first">Pioneers with over 25 years of experience in the industry enable us to develop the most efficient set of strategies made with purpose of achieving targeted band scores in IELTS, OET and PTE.</p>
+        <p class="about__first">Pioneers with over 25 years of experience in the industry enable us to develop the most efficient set of strategies made with purpose of achieving targeted band scores in IELTS and PTE.</p>
         <p>Our commitment to excellence and unparalleled dedication of trainers to go the extra mile assist you to ensure full learning satisfaction.</p>
         <p>Our intensive and rigorous practice sessions empowers you to crack the international exams in the 1st attempt and achieve top scores.</p>
       </div>

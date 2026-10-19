@@ -4,7 +4,7 @@
  * with PHP mail() (works on Hostinger; the From address must be a mailbox on casperacademy.in).
  */
 $to = 'info@casperacademy.in';
-$courses = ['IELTS', 'PTE', 'OET', 'Communicative English', 'German Language', 'Not sure yet'];
+$courses = ['IELTS', 'PTE', 'Communicative English', 'Not sure yet'];
 $errors = [];
 $old = ['name' => '', 'phone' => '', 'email' => '', 'course' => '', 'message' => ''];
 $status = $_GET['sent'] ?? null;
@@ -37,7 +37,7 @@ if (($_SERVER['REQUEST_METHOD'] ?? 'GET') === 'POST') {
 
 $page = [
   'title' => 'Contact Casper Academy of Excellence | Online IELTS Coaching',
-  'description' => 'Call +91 81 36 835 444, WhatsApp us or send an enquiry about online IELTS, PTE, OET, Communicative English or German classes at Casper Academy of Excellence.',
+  'description' => 'Call +91 81 36 835 444, WhatsApp us or send an enquiry about online IELTS, PTE or Communicative English classes at Casper Academy of Excellence.',
   'path' => '/contact',
   'nav' => 'contact',
   'image' => '/assets/img/photos/contact-hero.jpg',
