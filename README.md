@@ -33,7 +33,7 @@ tools/wrangler.jsonc     Cloudflare Workers config, copied into dist/ (Cloudflar
 Build locally: `php tools/build.php`, then preview with `npx wrangler pages dev dist`
 (or `php -S localhost:8000 router.php` for just the PHP pages).
 
-The contact form posts to [FormSubmit](https://formsubmit.co), which emails info@casperacademy.in
+The contact form posts to [FormSubmit](https://formsubmit.co), which emails casperacademy006@gmail.com
 (`contact.php` switches to it in the static build; the checks run in the browser).
 
 ## Site pages

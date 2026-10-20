@@ -10,7 +10,7 @@ $org = [
   'logo' => $site . '/assets/img/logo.png',
   'image' => $site . '/assets/img/photos/academy-2.jpg',
   'telephone' => '+91 8136835444',
-  'email' => 'info@casperacademy.in',
+  'email' => 'casperacademy006@gmail.com',
   'sameAs' => [
     'https://www.facebook.com/casperacademyofexcellencekochi/',
     'https://www.linkedin.com/company/casper-academy-of-excellence/',

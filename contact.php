@@ -1,12 +1,12 @@
 <?php
 /*
- * Contact page with an enquiry form. The form posts back here and is emailed to info@casperacademy.in
+ * Contact page with an enquiry form. The form posts back here and is emailed to casperacademy006@gmail.com
  * with PHP mail() (works on Hostinger; the From address must be a mailbox on casperacademy.in).
  * In the static build (tools/build.php defines STATIC_BUILD) the form posts to FormSubmit instead,
  * which emails the same address, and the checks below run in the browser (see the script at the end).
  */
 $static = defined('STATIC_BUILD');
-$to = 'info@casperacademy.in';
+$to = 'casperacademy006@gmail.com';
 $courses = ['IELTS', 'PTE', 'Communicative English', 'Not sure yet'];
 $errors = [];
 $old = ['name' => '', 'phone' => '', 'email' => '', 'course' => '', 'message' => ''];
@@ -75,7 +75,7 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
         <li class="ccard">
           <svg viewBox="0 0 24 24" aria-hidden="true"><rect x="3" y="5" width="18" height="14" rx="2" fill="none" stroke="currentColor" stroke-width="2"/><path d="m4 7 8 6 8-6" fill="none" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/></svg>
           <h2 class="ccard__title">Email</h2>
-          <a href="mailto:info@casperacademy.in">info@casperacademy.in</a>
+          <a href="mailto:casperacademy006@gmail.com">casperacademy006@gmail.com</a>
         </li>
       </ul>
     </div>

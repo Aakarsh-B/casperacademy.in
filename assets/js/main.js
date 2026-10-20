@@ -136,7 +136,7 @@
     document.querySelectorAll('.enquiry-form').forEach(function (form) {
       form.addEventListener('submit', function (e) {
         e.preventDefault();
-        alert('This is a preview. On the live website this form sends the enquiry to info@casperacademy.in.');
+        alert('This is a preview. On the live website this form sends the enquiry to casperacademy006@gmail.com.');
       });
     });
   }

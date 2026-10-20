@@ -17,7 +17,7 @@
         <h2>Contact</h2>
         <ul class="contact">
           <li><a href="tel:+918136835444">+91 81 36 835 444</a></li>
-          <li><a href="mailto:info@casperacademy.in">info@casperacademy.in</a></li>
+          <li><a href="mailto:casperacademy006@gmail.com">casperacademy006@gmail.com</a></li>
         </ul>
       </div>
 

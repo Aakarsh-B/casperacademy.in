@@ -121,7 +121,7 @@ if ($list) include __DIR__ . '/achievers.php';
         <h2 class="h2 h2--light"><?= e($course['cta'] ?? 'Join the Best Institute for IELTS Preparation') ?></h2>
         <div class="cta__actions">
           <a class="btn btn--white" href="tel:+918136835444">Call +91 81 36 835 444</a>
-          <a class="cta__link" href="mailto:info@casperacademy.in">info@casperacademy.in</a>
+          <a class="cta__link" href="mailto:casperacademy006@gmail.com">casperacademy006@gmail.com</a>
         </div>
       </div>
     </div>
