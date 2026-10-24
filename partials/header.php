@@ -9,8 +9,6 @@
  */
 $site = 'https://www.casperacademy.in';
 $page += ['image' => '/assets/img/photos/hero.jpg', 'preload' => null, 'preload_width' => 1400, 'preload_sizes' => '(min-width: 53.75em) 45vw, 100vw', 'header' => 'solid', 'schema' => [], 'noindex' => false];
-// Meta Pixel ID from Events Manager; leave empty to turn the pixel off
-$meta_pixel = '';
 require_once __DIR__ . '/helpers.php';
 $GLOBALS['page'] = $page; // shared parts read it via page_opt(), even when included from a function
 ?><!doctype html>
@@ -45,13 +43,7 @@ $GLOBALS['page'] = $page; // shared parts read it via page_opt(), even when incl
 <?php foreach ($page['schema'] as $schema): ?>
   <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 <?php endforeach; ?>
-<?php if ($meta_pixel): ?>
-  <script>
-  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
-  fbq('init', '<?= e($meta_pixel) ?>');
-  fbq('track', 'PageView');
-  </script>
-<?php endif; ?>
+<?php include __DIR__ . '/meta-pixel.php'; ?>
 </head>
 <body id="top">
 

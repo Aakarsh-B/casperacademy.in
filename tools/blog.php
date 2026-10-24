@@ -197,16 +197,16 @@ function blog_page($root, $m, $body_class, $main) {
 <?php if ($m['schema']) : ?>
 	<script type="application/ld+json"><?= json_encode($m['schema'], JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 <?php endif; ?>
-<link rel='preconnect' href='https://fonts.googleapis.com' />
-<link href='https://fonts.gstatic.com' crossorigin rel='preconnect' />
+<link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin />
+<link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin />
 <link rel="alternate" type="application/rss+xml" title="Casper Academy blog" href="/blog/feed.xml" />
 <?php readfile("$root/partials/blog-wp-styles.html"); ?>
-<link rel='stylesheet' id='casper-fonts-css' href='https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&#038;family=Figtree:wght@400;500;600;700&#038;display=swap' media='all' />
-<link rel='stylesheet' id='casper-site-css' href='/assets/css/style.css?ver=1.0.0' media='all' />
+<link rel='stylesheet' id='casper-site-css' href='/assets/css/style.css?ver=1.1.0' media='all' />
 <link rel='stylesheet' id='casper-blog-css' href='/assets/css/blog.css?ver=1.0.0' media='all' />
 <link rel="icon" href="/blog/wp-content/uploads/2021/09/logo-shortcut.png" sizes="32x32" />
 <link rel="icon" href="/blog/wp-content/uploads/2021/09/logo-shortcut.png" sizes="192x192" />
 <link rel="apple-touch-icon" href="/blog/wp-content/uploads/2021/09/logo-shortcut.png" />
+<?php include "$root/partials/meta-pixel.php"; ?>
 </head>
 <body class="<?= h($body_class) ?>" id="top">
 <?php
@@ -215,7 +215,7 @@ function blog_page($root, $m, $body_class, $main) {
   echo $main;
   include "$root/partials/site-footer.php";
 ?>
-<script id="casper-site-js" src="/assets/js/main.js?ver=1.0.0"></script>
+<script id="casper-site-js" src="/assets/js/main.js?ver=1.1.0"></script>
 <script src="/assets/js/blog-search.js?ver=1.0.0" defer></script>
 </body>
 </html>
