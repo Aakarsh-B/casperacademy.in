@@ -55,69 +55,8 @@ const page = (a, story) => {
   <div class="band"><span>casperacademy.in</span><img src="${LOGO_W}" alt=""></div></div>`;
 };
 
-// Round 2: three different ideas, feed only (Click-to-WhatsApp ads use one image for all placements)
-const CSS2 = `
-.v{width:1080px;height:1350px;display:flex;flex-direction:column;font-family:Figtree,sans-serif}
-.v .in{flex:1;display:flex;flex-direction:column;padding:96px 84px 0}
-.v .k{font-weight:700;font-size:28px;letter-spacing:.14em;text-transform:uppercase;color:#c8183f}
-.v h2{font-family:Fraunces,serif;font-weight:600;font-size:92px;line-height:1.05;letter-spacing:-.01em;margin-top:22px;color:#1e1a50}
-.v p{font-size:38px;line-height:1.4;color:#3a3760}
-.v .cta{align-self:flex-start;margin-top:auto;margin-bottom:56px}
-.card{border-radius:28px;padding:34px 40px;font-size:50px;line-height:1.3}
-.card small{display:block;font-size:24px;font-weight:700;letter-spacing:.12em;text-transform:uppercase;margin-bottom:10px}
-.bad{background:#fde8ed;color:#7d0f28}.good{background:#e3f4ec;color:#0d5a3f}
-.bad s{text-decoration-thickness:4px;text-decoration-color:#c8183f}
-.rows{margin-top:44px;display:grid;gap:18px}
-.row{display:flex;justify-content:space-between;align-items:center;gap:24px;background:#fff;border-radius:24px;padding:40px 38px;box-shadow:0 10px 30px -18px rgba(30,26,80,.35)}
-.row span{font-size:40px;font-weight:600;color:#1e1a50;line-height:1.25}
-.row span small{display:block;font-size:28px;margin-top:4px;font-weight:500;color:#6b6890}
-.row b{font-family:Fraunces,serif;font-size:70px;color:#c8183f;white-space:nowrap}
-.fine{font-size:24px!important;color:#6b6890!important;margin-top:22px}
-.red{background:#c8183f}.red .k{color:#ffd0da}.red h2,.red p{color:#fff}
-.no{font-family:Fraunces,serif;font-weight:600;font-size:330px;line-height:.9;color:#fff;margin-top:24px}
-.crit{display:flex;flex-wrap:wrap;gap:14px;margin-top:36px}
-.crit span{font-size:30px;font-weight:600;color:#fff;border:2px solid rgba(255,255,255,.55);border-radius:999px;padding:12px 24px}
-.navyband{background:#1e1a50}
-`;
-const band = cls => `<div class="band ${cls || ''}" style="margin-top:0"><span>casperacademy.in</span><img src="${LOGO_W}" alt=""></div>`;
-const cta = `<div class="cta">${WA}Chat with us on WhatsApp</div>`;
-const round2 = {
-  'mistake': `<div class="v" style="background:#f7f6fb"><div class="in">
-    <div class="k">IELTS Writing</div><h2>Can you spot the mistake?</h2>
-    <div class="rows" style="gap:24px">
-      <div class="card bad"><small>Wrong</small>The number of students <s>have</s> increased.</div>
-      <div class="card good"><small>Right</small>The number of students <b>has</b> increased.</div></div>
-    <p style="margin-top:40px">Small slips like this cost you marks. In our one-on-one classes, your essays are corrected live.</p>
-    ${cta}</div>${band()}</div>`,
-  'band-needed': `<div class="v" style="background:#f7f6fb"><div class="in" style="padding-top:84px">
-    <div class="k">Planning to go abroad?</div><h2 style="font-size:84px">What IELTS band do you need?</h2>
-    <div class="rows">
-      <div class="row"><span>Canada Express Entry<small>CLB 7, IELTS General</small></span><b>6.0 each</b></div>
-      <div class="row"><span>Nursing in the UK<small>NMC, IELTS Academic (writing 6.5)</small></span><b>7.0</b></div>
-      <div class="row"><span>University in the UK, Canada or Australia<small>Most courses, overall score</small></span><b>6.0–6.5</b></div></div>
-    <p class="fine" style="font-size:26px!important">Typical requirements. Always check your university or visa rules.</p>
-    ${cta}</div>${band()}</div>`,
-  'accent-myth': `<div class="v red"><div class="in">
-    <div class="k">IELTS Speaking myth</div><h2>Do you need a British accent for Band 8?</h2>
-    <div class="no">No.</div>
-    <p style="margin-top:20px">Examiners score how clearly and fluently you speak, not your accent:</p>
-    <div class="crit"><span>Fluency</span><span>Vocabulary</span><span>Grammar</span><span>Pronunciation</span></div>
-    ${cta}</div>${band('navyband')}</div>`,
-};
-
 (async () => {
   fs.mkdirSync(OUT, { recursive: true });
-  const b2 = await chromium.launch();
-  for (const [name, html] of Object.entries(round2)) {
-    const p = await b2.newPage({ viewport: { width: 1080, height: 1350 } });
-    await p.setContent(`<!doctype html><style>${CSS}${CSS2}</style>${html}`);
-    await p.evaluate(() => document.fonts.ready);
-    const file = `${OUT}${name}-feed.jpg`;
-    await p.screenshot({ path: file, type: 'jpeg', quality: 90 });
-    await p.close();
-    console.log(file);
-  }
-  await b2.close();
   const browser = await chromium.launch();
   for (const [name, a] of Object.entries(ads)) {
     for (const story of [false, true]) {
