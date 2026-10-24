@@ -43,7 +43,7 @@
     </div>
 
     <div class="footer__bottom">
-      <p>© 2026 Casper Academy of Excellence</p>
+      <p>© 2026 Casper Academy of Excellence · <a href="/privacy">Privacy policy</a></p>
       <a class="totop" href="#top" aria-label="Back to top"><svg viewBox="0 0 24 24"><path d="m6 15 6-6 6 6" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
     </div>
   </div>

@@ -57,6 +57,7 @@
       var to = parseInt(el.dataset.to, 10);
       var start = null;
       var dur = 1600;
+      el.style.minWidth = el.offsetWidth + 'px'; // hold the final width so the stats don't shift
       el.textContent = '0';
       function tick(t) {
         if (!start) start = t;
@@ -68,6 +69,12 @@
       requestAnimationFrame(tick);
     });
   }
+
+  // Meta Pixel: a tap on any WhatsApp or phone link counts as a Contact
+  document.addEventListener('click', function (e) {
+    var a = e.target.closest && e.target.closest('a[href*="whatsapp"], a[href^="tel:"]');
+    if (a && window.fbq) fbq('track', 'Contact', { method: a.href.indexOf('tel:') === 0 ? 'phone' : 'whatsapp' });
+  });
 
   // IELTS score calculator: average of four bands, rounded to the nearest half band
   // (.25 rounds up to .5, .75 rounds up to the next whole band)

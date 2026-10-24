@@ -15,3 +15,13 @@ if (!function_exists('nav_current')) {
 if (!function_exists('e')) {
   function e($s) { return htmlspecialchars($s, ENT_QUOTES); }
 }
+if (!function_exists('srcset')) {
+  // Smaller WebP copies of a photo (x-800.webp, x-1400.webp), plus the original when it is wider
+  function srcset($src, $width) {
+    $base = preg_replace('/\.jpg$/', '', $src);
+    if (!is_file(dirname(__DIR__) . $base . '-800.webp')) return '';
+    $set = ["$base-800.webp 800w", "$base-1400.webp " . min($width, 1400) . "w"];
+    if ($width > 1400) $set[] = "$src {$width}w";
+    return implode(', ', $set);
+  }
+}

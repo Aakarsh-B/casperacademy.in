@@ -5,6 +5,8 @@ $page = [
   'path' => '/',
   'nav' => 'home',
   'preload' => '/assets/img/photos/hero.jpg',
+  'preload_width' => 2000,
+  'preload_sizes' => '100vw',
   'header' => 'overlay',
 ];
 include __DIR__ . '/partials/header.php';
@@ -14,7 +16,7 @@ include __DIR__ . '/partials/header.php';
 
   <!-- ============ Hero ============ -->
   <section class="hero">
-    <img class="hero__photo" src="/assets/img/photos/hero.jpg" alt="Students in a classroom, one holding a folder and smiling" width="2000" height="1333">
+    <img class="hero__photo" src="/assets/img/photos/hero.jpg" srcset="<?= srcset('/assets/img/photos/hero.jpg', 2000) ?>" sizes="100vw" fetchpriority="high" alt="Students in a classroom, one holding a folder and smiling" width="2000" height="1333">
     <div class="wrap hero__content">
       <p class="hero__kicker">Best IELTS Institute in Kochi</p>
       <h1 class="hero__title">Your Mission - Better lifestyle</h1>
@@ -59,21 +61,21 @@ include __DIR__ . '/partials/header.php';
       <ul class="course-grid">
         <li class="course course--feature">
           <a href="/ielts">
-            <img src="/assets/img/photos/course-ielts.jpg" alt="" loading="lazy" width="900" height="1100">
+            <img src="/assets/img/photos/course-ielts.jpg" srcset="<?= srcset('/assets/img/photos/course-ielts.jpg', 900) ?>" sizes="(min-width: 53.75em) 33vw, 100vw" alt="" loading="lazy" width="900" height="1100">
             <span class="course__name">IELTS</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </li>
         <li class="course">
           <a href="/pte">
-            <img src="/assets/img/photos/course-pte.jpg" alt="" loading="lazy" width="900" height="700">
+            <img src="/assets/img/photos/course-pte.jpg" srcset="<?= srcset('/assets/img/photos/course-pte.jpg', 900) ?>" sizes="(min-width: 53.75em) 33vw, 100vw" alt="" loading="lazy" width="900" height="700">
             <span class="course__name">PTE</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
         </li>
         <li class="course">
           <a href="/communicative-english">
-            <img src="/assets/img/photos/course-english.jpg" alt="" loading="lazy" width="900" height="700">
+            <img src="/assets/img/photos/course-english.jpg" srcset="<?= srcset('/assets/img/photos/course-english.jpg', 900) ?>" sizes="(min-width: 53.75em) 33vw, 100vw" alt="" loading="lazy" width="900" height="700">
             <span class="course__name">Communicative English</span>
             <svg class="course__go" viewBox="0 0 24 24" aria-hidden="true"><path d="M7 17 17 7M9 7h8v8" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
           </a>
@@ -90,8 +92,8 @@ include __DIR__ . '/partials/header.php';
   <section class="about" id="about">
     <div class="wrap about__inner">
       <div class="about__photos">
-        <img class="about__photo about__photo--main" src="/assets/img/photos/academy-2.jpg" alt="Students working through study material together at Casper Academy" loading="lazy" width="1200" height="900">
-        <img class="about__photo about__photo--small" src="/assets/img/photos/academy-1.jpg" alt="A class in session at Casper Academy" loading="lazy" width="1200" height="900">
+        <img class="about__photo about__photo--main" src="/assets/img/photos/academy-2.jpg" srcset="<?= srcset('/assets/img/photos/academy-2.jpg', 1200) ?>" sizes="(min-width: 53.75em) 40vw, 100vw" alt="Students working through study material together at Casper Academy" loading="lazy" width="1200" height="900">
+        <img class="about__photo about__photo--small" src="/assets/img/photos/academy-1.jpg" srcset="<?= srcset('/assets/img/photos/academy-1.jpg', 1200) ?>" sizes="(min-width: 53.75em) 25vw, 60vw" alt="A class in session at Casper Academy" loading="lazy" width="1200" height="900">
       </div>
       <div class="about__text">
         <h2 class="about__title">Casper Academy of Excellence<br>Best IELTS Coaching in Kochi</h2>
@@ -118,7 +120,7 @@ include __DIR__ . '/partials/header.php';
     <div class="wrap">
       <div class="join__card">
         <div class="join__media">
-          <img src="/assets/img/photos/join.jpg" alt="Students gathered around a laptop, smiling" loading="lazy" width="1400" height="1050">
+          <img src="/assets/img/photos/join.jpg" srcset="<?= srcset('/assets/img/photos/join.jpg', 1400) ?>" sizes="(min-width: 53.75em) 50vw, 100vw" alt="Students gathered around a laptop, smiling" loading="lazy" width="1400" height="1050">
         </div>
         <div class="join__text">
           <h2 class="h2 h2--light">Join the Best Institute for IELTS Preparation</h2>
@@ -129,12 +131,12 @@ include __DIR__ . '/partials/header.php';
 
       <div class="videos">
         <a class="video" href="https://www.youtube.com/watch?v=OZNkn7bPemI" target="_blank" rel="noopener" aria-label="Play IDP IELTS video (opens YouTube)">
-          <img src="/assets/img/photos/video-1.jpg" alt="" loading="lazy" width="900" height="600">
+          <img src="/assets/img/photos/video-1.jpg" srcset="<?= srcset('/assets/img/photos/video-1.jpg', 900) ?>" sizes="(min-width: 53.75em) 50vw, 100vw" alt="" loading="lazy" width="900" height="600">
           <span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
           <span class="video__label">IDP IELTS</span>
         </a>
         <a class="video" href="https://www.youtube.com/watch?v=PBqUCD-K6Mw" target="_blank" rel="noopener" aria-label="Play IDP IELTS video (opens YouTube)">
-          <img src="/assets/img/photos/video-2.jpg" alt="" loading="lazy" width="900" height="600">
+          <img src="/assets/img/photos/video-2.jpg" srcset="<?= srcset('/assets/img/photos/video-2.jpg', 900) ?>" sizes="(min-width: 53.75em) 50vw, 100vw" alt="" loading="lazy" width="900" height="600">
           <span class="video__play" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M8 5.5v13l10.5-6.5z" fill="currentColor"/></svg></span>
           <span class="video__label">IDP IELTS</span>
         </a>

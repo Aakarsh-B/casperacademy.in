@@ -87,7 +87,7 @@ $err = fn($k) => isset($errors[$k]) ? ' aria-invalid="true" aria-describedby="' 
         <h2 class="h2">Send us an enquiry</h2>
         <p class="lead">Tell us which course you're interested in and we'll call you back.</p>
         <figure class="enquiry__photo">
-          <img src="/assets/img/photos/contact-hero.jpg" alt="Students smiling as they work together around a laptop" loading="lazy" width="1400" height="1100">
+          <img src="/assets/img/photos/contact-hero.jpg" srcset="<?= srcset('/assets/img/photos/contact-hero.jpg', 1400) ?>" sizes="(min-width: 53.75em) 45vw, 100vw" alt="Students smiling as they work together around a laptop" loading="lazy" width="1400" height="1100">
         </figure>
       </div>
 

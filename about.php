@@ -36,7 +36,7 @@ include __DIR__ . '/partials/header.php';
         </div>
       </div>
       <div class="phero__media">
-        <img src="/assets/img/photos/about-hero.jpg" alt="Students smiling as they work together around a laptop" width="1400" height="1100">
+        <img src="/assets/img/photos/about-hero.jpg" srcset="<?= srcset('/assets/img/photos/about-hero.jpg', 1400) ?>" sizes="(min-width: 53.75em) 45vw, 100vw" fetchpriority="high" alt="Students smiling as they work together around a laptop" width="1400" height="1100">
       </div>
     </div>
   </section>

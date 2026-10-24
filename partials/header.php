@@ -3,12 +3,14 @@
  * Shared <head> and site header.
  * Set $page before including:
  *   title, description, path (e.g. '/ielts'), nav (active menu key),
- *   image (social preview, optional), preload (hero image, optional),
+ *   image (social preview, optional), preload (hero image, optional; preload_width and preload_sizes describe it),
  *   header ('overlay' only for pages with a dark photo hero; default is the solid white header),
  *   schema (array of extra JSON-LD, optional)
  */
 $site = 'https://www.casperacademy.in';
-$page += ['image' => '/assets/img/photos/hero.jpg', 'preload' => null, 'header' => 'solid', 'schema' => [], 'noindex' => false];
+$page += ['image' => '/assets/img/photos/hero.jpg', 'preload' => null, 'preload_width' => 1400, 'preload_sizes' => '(min-width: 53.75em) 45vw, 100vw', 'header' => 'solid', 'schema' => [], 'noindex' => false];
+// Meta Pixel ID from Events Manager; leave empty to turn the pixel off
+$meta_pixel = '';
 require_once __DIR__ . '/helpers.php';
 $GLOBALS['page'] = $page; // shared parts read it via page_opt(), even when included from a function
 ?><!doctype html>
@@ -34,15 +36,22 @@ $GLOBALS['page'] = $page; // shared parts read it via page_opt(), even when incl
   <link rel="icon" type="image/png" sizes="192x192" href="/assets/img/favicon-192.png">
   <link rel="apple-touch-icon" href="/assets/img/apple-touch-icon.png">
 <?php if ($page['preload']): ?>
-  <link rel="preload" as="image" href="<?= $page['preload'] ?>">
+<?php $set = srcset($page['preload'], $page['preload_width']); ?>
+  <link rel="preload" as="image" href="<?= $page['preload'] ?>"<?php if ($set): ?> imagesrcset="<?= $set ?>" imagesizes="<?= $page['preload_sizes'] ?>"<?php endif; ?> fetchpriority="high">
 <?php endif; ?>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="/assets/css/style.css?v=3">
+  <link rel="preload" href="/assets/fonts/fraunces-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="/assets/fonts/figtree-latin.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="stylesheet" href="/assets/css/style.css?v=4">
 <?php foreach ($page['schema'] as $schema): ?>
   <script type="application/ld+json"><?= json_encode($schema, JSON_UNESCAPED_SLASHES | JSON_UNESCAPED_UNICODE) ?></script>
 <?php endforeach; ?>
+<?php if ($meta_pixel): ?>
+  <script>
+  !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');
+  fbq('init', '<?= e($meta_pixel) ?>');
+  fbq('track', 'PageView');
+  </script>
+<?php endif; ?>
 </head>
 <body id="top">
 

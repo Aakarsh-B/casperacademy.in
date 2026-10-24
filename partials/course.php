@@ -32,7 +32,7 @@ $wa_text = rawurlencode("Hi, I'd like to know about " . $course['short'] . ' coa
         </div>
       </div>
       <div class="phero__media">
-        <img src="<?= e($course['image']) ?>" alt="<?= e($course['image_alt']) ?>" width="1400" height="1100">
+        <img src="<?= e($course['image']) ?>" srcset="<?= srcset($course['image'], 1400) ?>" sizes="(min-width: 53.75em) 45vw, 100vw" fetchpriority="high" alt="<?= e($course['image_alt']) ?>" width="1400" height="1100">
 <?php if (!empty($course['chips'])): ?>
         <ul class="phero__chips" aria-label="Course highlights">
 <?php foreach ($course['chips'] as $chip): ?>
@@ -96,7 +96,7 @@ $wa_text = rawurlencode("Hi, I'd like to know about " . $course['short'] . ' coa
       <header class="section__head">
         <h2 class="h2"><?= e($course['learn_title'] ?? 'You will learn') ?></h2>
 <?php if (!empty($course['learn_image'])): ?>
-        <img class="learn__photo" src="<?= e($course['learn_image']) ?>" alt="" loading="lazy" width="1000" height="800">
+        <img class="learn__photo" src="<?= e($course['learn_image']) ?>" srcset="<?= srcset($course['learn_image'], 1000) ?>" sizes="(min-width: 53.75em) 45vw, 100vw" alt="" loading="lazy" width="1000" height="800">
 <?php endif; ?>
       </header>
       <ul class="learn__list">
