@@ -3,7 +3,12 @@
 {
   "name": "casperacademy-in",
   "compatibility_date": "2026-10-01",
+  // worker.js answers old spam addresses (/?p123…/) with 410 Gone. It runs only for the homepage path,
+  // where the spam addresses are; every other request goes straight to the static files
+  "main": "worker.js",
   "assets": {
+    "binding": "ASSETS",
+    "run_worker_first": ["/"],
     "directory": ".",
     "html_handling": "auto-trailing-slash",
     "not_found_handling": "404-page"
