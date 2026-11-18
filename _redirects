@@ -1,0 +1,108 @@
+# Cloudflare Pages redirects (replaces .htaccess). tools/build.php copies this into dist/
+# and adds /page.php -> /page for every site page.
+# https://www.casperacademy.in is the main address: add a Cloudflare redirect rule for casperacademy.in -> www.
+
+/index.php                     /                                   301
+
+# Old page addresses -> new ones (keeps Google rankings and old links working)
+/contact-us                    /contact                            301
+/contact-us.php                /contact                            301
+/frequently                    /faq                                301
+/frequently.php                /faq                                301
+/services                      /about                              301
+/services.php                  /about                              301
+/course                        /#courses                           301
+/course.php                    /#courses                           301
+/courses                       /#courses                           301
+/courses.php                   /#courses                           301
+/spoken-english                /communicative-english              301
+/spoken-english.php            /communicative-english              301
+/python                        /                                   301
+/python.php                    /                                   301
+/ielts-score-calculator        /ielts#score-calculator             301
+/ielts-score-calculator.php    /ielts#score-calculator             301
+/pte-coaching-centre-kochi     /pte                                301
+/pte-coaching-centre-kochi.php /pte                                301
+
+# Old keyword pages from the footer, merged into the IELTS page
+/ielts-ernakulam                               /ielts 301
+/ielts-training-centre-in-kochi                /ielts 301
+/ielts-institute-in-kochi                      /ielts 301
+/ielts-training-centre-in-kerala               /ielts 301
+/ielts-exam-registration-in-kochi              /ielts 301
+/online-ielts-coaching                         /ielts 301
+/ielts-coaching-centre-kochi                   /ielts 301
+/ielts-coaching-in-kochi                       /ielts 301
+/best-ielts-coaching-in-ernakulam              /ielts 301
+/top-ielts-coaching-centre-in-kochi            /ielts 301
+/best-ielts-coaching-centre-in-kochi           /ielts 301
+/ielts-institute-in-kerala                     /ielts 301
+/ielts-coaching-institutes-in-kochi            /ielts 301
+/best-ielts-coaching-centre-in-kerala          /ielts 301
+/ielts-coaching-centre-in-kerala               /ielts 301
+/your-pathway-to-success-in-ielts-education    /ielts 301
+/ielts-exam-registration                       /ielts 301
+/top-ielts-coaching-in-kochi-ernakulam         /ielts 301
+/top-ielts-coaching-kochi-ernakulam            /ielts 301
+/ielts-ernakulam.php                           /ielts 301
+/ielts-training-centre-in-kochi.php            /ielts 301
+/ielts-institute-in-kochi.php                  /ielts 301
+/ielts-training-centre-in-kerala.php           /ielts 301
+/ielts-exam-registration-in-kochi.php          /ielts 301
+/online-ielts-coaching.php                     /ielts 301
+/ielts-coaching-centre-kochi.php               /ielts 301
+/ielts-coaching-in-kochi.php                   /ielts 301
+/best-ielts-coaching-in-ernakulam.php          /ielts 301
+/top-ielts-coaching-centre-in-kochi.php        /ielts 301
+/best-ielts-coaching-centre-in-kochi.php       /ielts 301
+/ielts-institute-in-kerala.php                 /ielts 301
+/ielts-coaching-institutes-in-kochi.php        /ielts 301
+/best-ielts-coaching-centre-in-kerala.php      /ielts 301
+/ielts-coaching-centre-in-kerala.php           /ielts 301
+/your-pathway-to-success-in-ielts-education.php /ielts 301
+/ielts-exam-registration.php                   /ielts 301
+/top-ielts-coaching-in-kochi-ernakulam.php     /ielts 301
+/top-ielts-coaching-kochi-ernakulam.php        /ielts 301
+
+# OET and German courses are no longer offered
+/oet                                           / 301
+/oet-kochi                                     / 301
+/best-oet-coaching-centre-in-kochi             / 301
+/german-language                               / 301
+/german-coaching-in-kochi                      / 301
+/german-language-course-in-kochi               / 301
+/german-language-institute-in-ernakulam        / 301
+/oet.php                                       / 301
+/oet-kochi.php                                 / 301
+/best-oet-coaching-centre-in-kochi.php         / 301
+/german-language.php                           / 301
+/german-coaching-in-kochi.php                  / 301
+/german-language-course-in-kochi.php           / 301
+/german-language-institute-in-ernakulam.php    / 301
+
+# Old WordPress blog addresses
+/blog/index.php                /blog/                              301
+/blog/blogs-2/                 /blog/                              301
+/blog/feed/                    /blog/feed.xml                      301
+/blog/feed                     /blog/feed.xml                      301
+/blog/sitemap_index.xml        /sitemap.xml                        301
+/blog/post-sitemap.xml         /sitemap.xml                        301
+/blog/page-sitemap.xml         /sitemap.xml                        301
+/blog/category-sitemap.xml     /sitemap.xml                        301
+/blog/post_tag-sitemap.xml     /sitemap.xml                        301
+/blog/author-sitemap.xml       /sitemap.xml                        301
+/blog/author/*                 /blog/                              301
+/blog/wp-admin/*               /                                   301
+/blog/wp-login.php             /                                   301
+/blog/:slug/feed/              /blog/:slug/                        301
+
+# Old .php addresses (generated)
+/about.php /about 301
+/communicative-english.php /communicative-english 301
+/contact.php /contact 301
+/essay.php /essay 301
+/faq.php /faq 301
+/gallery.php /gallery 301
+/ielts.php /ielts 301
+/privacy.php /privacy 301
+/pte.php /pte 301
